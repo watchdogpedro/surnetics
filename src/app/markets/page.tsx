@@ -3,162 +3,69 @@ import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import SectionWrapper from "@/components/SectionWrapper";
-import { ArrowRight, FlaskConical, Cpu, Heart, Pill, Battery, Rocket, CheckCircle2 } from "lucide-react";
+import { FlaskConical, Cpu, Heart, Pill, Battery, Rocket, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Markets | Six Industries. One Platform Technology.",
   description:
     "Surnetics Surface Energy Gradient Coating technology addresses fluid management challenges across IVD diagnostics, electronics cooling, implantable devices, drug delivery, energy storage, and aerospace.",
+  keywords: [
+    "microfluidic technology markets",
+    "pump-free microfluidics applications",
+    "passive fluid control industries",
+    "microfluidic IP licensing",
+    "surface energy gradient applications",
+  ],
 };
 
 const markets = [
   {
-    id: "ivd",
     icon: <FlaskConical size={28} />,
     title: "In-Vitro Diagnostics & Point-of-Care",
-    shortTitle: "IVD & POC",
-    problem: {
-      headline: "Pumps and controllers exceed 80% of system cost",
-      detail:
-        "Traditional cartridge-reader systems rely on pumps, valves, and electronic controllers to move samples through diagnostic channels. These components dominate system cost, limit portability, require calibration, and introduce failure points. Handheld field diagnostics require zero external hardware — a requirement that cannot be met with conventional pump-based architectures.",
-    },
-    solution: {
-      headline: "Passive flow eliminates pumps entirely",
-      detail:
-        "Surnetics gradient coatings self-propel patient samples through diagnostic channels without any pumps, valves, or power source. Multiple flow rates on a single device layer eliminate channel stacking. Cartridge size shrinks dramatically. System BOM cost drops by 80% or more.",
-    },
-    applications: [
-      "IVD cartridges and lateral flow devices",
-      "Point-of-care handheld diagnostics",
-      "Lab-on-chip platforms",
-      "Field test kits",
-      "PCR and amplification devices",
-      "Microarrays and microplates",
-      "Biosensors",
-    ],
-    accent: "#0066FF",
+    description:
+      "Eliminate pumps from cartridge-reader systems. Passive flow reduces hardware cost by 80%+ and enables truly portable field diagnostics.",
+    href: "/markets/ivd-diagnostics/",
+    highlight: "80%+ cost reduction",
   },
   {
-    id: "electronics",
     icon: <Cpu size={28} />,
     title: "Electronics Thermal Management",
-    shortTitle: "Semiconductor",
-    problem: {
-      headline: "AI chips and high-density semiconductors generate extreme heat",
-      detail:
-        "The rapid growth of AI computing has created an acute thermal management crisis. AI chips generate heat densities that air cooling cannot address. Liquid cooling is required — but conventional liquid cooling systems require pumps, tubing, and controllers that add cost, occupy space, and introduce mechanical failure points.",
-    },
-    solution: {
-      headline: "Passive pump-free liquid cooling",
-      detail:
-        "Surnetics coatings enable liquid to flow through cooling channels purely by surface energy gradient — no pump, no moving parts, no power draw from the cooling system itself. This approach is uniquely suited to embedded chip cooling, sealed modules, and applications where pump reliability is critical.",
-    },
-    applications: [
-      "AI chip cooling modules",
-      "Semiconductor wafer processing",
-      "High-performance computing thermal management",
-      "Data center liquid cooling",
-      "Power electronics cooling",
-      "Edge computing enclosures",
-    ],
-    accent: "#0066FF",
+    description:
+      "Pump-free liquid cooling for AI chips, high-density semiconductors, and data center modules — passive, reliable, no moving parts.",
+    href: "/markets/electronics-cooling/",
+    highlight: "Zero parasitic power",
   },
   {
-    id: "implants",
     icon: <Heart size={28} />,
     title: "Implantable Medical Devices",
-    shortTitle: "Implantables",
-    problem: {
-      headline: "Implantable devices need fluid management without external power",
-      detail:
-        "Implantable devices must manage fluids — drug delivery, biosensing, waste management — inside the body without external power connections or mechanical components that add size, reduce biocompatibility, and shorten device life. Conventional pump mechanisms are impractical at implantable scale.",
-    },
-    solution: {
-      headline: "Passive biocompatible coatings for in-vivo fluid control",
-      detail:
-        "Gradient coatings can be applied to biocompatible substrate materials to enable passive fluid control inside implanted devices — with no pump, no mechanical components, and no parasitic power draw. Smaller form factors and longer device operating life are achievable.",
-    },
-    applications: [
-      "Implantable drug delivery systems",
-      "In-vivo biosensors",
-      "Neural interfaces",
-      "Implantable diagnostics",
-      "Chronic disease monitoring devices",
-    ],
-    accent: "#0066FF",
+    description:
+      "Biocompatible passive coatings enable fluid control inside implants without pumps — smaller form factor, longer device life.",
+    href: "/markets/implantable-devices/",
+    highlight: "No power required",
   },
   {
-    id: "drug-delivery",
     icon: <Pill size={28} />,
     title: "Drug Delivery",
-    shortTitle: "Drug Delivery",
-    problem: {
-      headline: "Precise, controlled, passive drug dosing is difficult without mechanical complexity",
-      detail:
-        "Controlled drug release — whether transdermal, implantable, or inhaled — requires precise, repeatable fluid metering. Achieving this passively, without pumps or actuators, has been a fundamental challenge that limits the design space for next-generation drug delivery systems.",
-    },
-    solution: {
-      headline: "Metered passive flow for controlled release",
-      detail:
-        "Gradient coatings enable precisely metered passive flow for drug delivery applications. Flow rate and stopping points are programmed into the coating design — enabling controlled, reproducible drug release without any active components.",
-    },
-    applications: [
-      "Transdermal drug delivery patches",
-      "Implantable drug depots",
-      "Inhalation and pulmonary devices",
-      "Oral controlled-release systems",
-      "Microneedle drug delivery",
-    ],
-    accent: "#0066FF",
+    description:
+      "Metered passive flow enables controlled drug release without pumps or actuators — transdermal, implantable, and oral applications.",
+    href: "/markets/drug-delivery/",
+    highlight: "Precisely metered flow",
   },
   {
-    id: "energy",
     icon: <Battery size={28} />,
     title: "Energy Storage & Generation",
-    shortTitle: "Energy",
-    problem: {
-      headline: "Batteries, fuel cells, and solar panels are sensitive to liquid management",
-      detail:
-        "Electrochemical energy devices depend critically on liquid management — water removal in fuel cells, electrolyte distribution in flow batteries, anti-icing and water management in solar panels. Conventional solutions require parasitic pumps that consume energy from the device they are meant to serve.",
-    },
-    solution: {
-      headline: "Passive directional fluid control with no parasitic power draw",
-      detail:
-        "Gradient coatings enable passive directional fluid management in energy devices — moving water, electrolyte, or fuel precisely where it needs to go without consuming any device power. No pumps, no moving parts, no maintenance.",
-    },
-    applications: [
-      "Proton exchange membrane fuel cells",
-      "Lithium and solid-state batteries",
-      "Flow batteries",
-      "Solar panel water management",
-      "Electrolyzer systems",
-    ],
-    accent: "#0066FF",
+    description:
+      "Directional passive fluid management in fuel cells, batteries, and solar panels — no parasitic power draw.",
+    href: "/markets/energy-storage/",
+    highlight: "No parasitic draw",
   },
   {
-    id: "aerospace",
     icon: <Rocket size={28} />,
     title: "Aerospace & Defense",
-    shortTitle: "Aerospace",
-    problem: {
-      headline: "Extreme environments demand zero-failure fluid management",
-      detail:
-        "Aerospace and defense fluid systems must perform in high-vibration, vacuum, extreme temperature, and zero-gravity environments where conventional pump-based systems fail or require impractical maintenance. Any mechanical component is a potential failure point in these applications.",
-    },
-    solution: {
-      headline: "No mechanical components — inherently reliable",
-      detail:
-        "Passive surface-driven flow has no moving parts, requires no power, and is inherently immune to vibration, orientation, and vacuum environments. This represents a paradigm shift for fluid management in space, satellite, and defense applications.",
-    },
-    applications: [
-      "Satellite thermal management systems",
-      "UAV and drone fuel systems",
-      "Defense sensor platforms",
-      "Space life science instruments",
-      "Spacecraft fluid loops",
-      "High-altitude platform systems",
-    ],
-    accent: "#0066FF",
+    description:
+      "No moving parts. No power requirements. Inherently reliable in high-vibration, vacuum, and zero-gravity environments.",
+    href: "/markets/aerospace-defense/",
+    highlight: "Zero failure points",
   },
 ];
 
@@ -183,94 +90,56 @@ export default function MarketsPage() {
               complexity — across a broad range of high-value markets.
             </p>
           </div>
-
-          {/* Market quick links */}
-          <div className="flex flex-wrap gap-2 mt-10">
-            {markets.map((m) => (
-              <a
-                key={m.id}
-                href={`#${m.id}`}
-                className="px-4 py-1.5 rounded-full border border-white/20 text-white/70 text-xs font-medium hover:border-[#0066FF] hover:text-[#60A5FA] transition-colors duration-200"
-              >
-                {m.shortTitle}
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Market Sections */}
-      {markets.map((market, i) => (
-        <SectionWrapper key={market.id} id={market.id} gray={i % 2 !== 0}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left: Problem + Solution */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-[#E8F0FF] flex items-center justify-center text-[#0066FF]">
-                  {market.icon}
-                </div>
-                <div>
-                  <p className="text-[#8892A4] text-xs font-semibold uppercase tracking-wide">Market</p>
-                  <h2 className="text-[#0A1628] font-extrabold text-xl leading-tight tracking-tight">
-                    {market.title}
-                  </h2>
-                </div>
+      {/* Markets Grid */}
+      <SectionWrapper>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {markets.map((market) => (
+            <Link
+              key={market.href}
+              href={market.href}
+              className="group bg-white rounded-2xl border border-[#E2E8F0] p-8 hover:border-[#0066FF]/40 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-14 h-14 rounded-xl bg-[#E8F0FF] flex items-center justify-center text-[#0066FF] mb-6 group-hover:bg-[#0066FF] group-hover:text-white transition-colors duration-300">
+                {market.icon}
               </div>
-
-              {/* Problem */}
-              <div className="mb-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                  <p className="text-red-500 text-xs font-bold uppercase tracking-wide">The Problem</p>
-                </div>
-                <h3 className="text-[#0A1628] font-bold text-base mb-2">{market.problem.headline}</h3>
-                <p className="text-[#8892A4] text-sm leading-relaxed">{market.problem.detail}</p>
-              </div>
-
-              {/* Solution */}
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
-                  <p className="text-[#0066FF] text-xs font-bold uppercase tracking-wide">The Surnetics Solution</p>
-                </div>
-                <h3 className="text-[#0A1628] font-bold text-base mb-2">{market.solution.headline}</h3>
-                <p className="text-[#8892A4] text-sm leading-relaxed">{market.solution.detail}</p>
-              </div>
-            </div>
-
-            {/* Right: Applications */}
-            <div>
-              <p className="text-[#0A1628] font-bold text-sm uppercase tracking-wide mb-4">
-                Applications
+              <h2 className="text-[#0A1628] font-bold text-lg mb-3 group-hover:text-[#0066FF] transition-colors duration-200">
+                {market.title}
+              </h2>
+              <p className="text-[#8892A4] text-sm leading-relaxed mb-4">
+                {market.description}
               </p>
-              <ul className="space-y-2.5">
-                {market.applications.map((app) => (
-                  <li key={app} className="flex items-start gap-3">
-                    <CheckCircle2 size={15} className="text-[#0066FF] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#2D3748] text-sm">{app}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 p-4 bg-[#E8F0FF] border border-[#0066FF]/20 rounded-xl">
-                <p className="text-[#0A1628] text-xs font-semibold mb-1">
-                  Interested in this market?
-                </p>
-                <p className="text-[#8892A4] text-xs leading-relaxed mb-3">
-                  We are actively seeking licensing partners and co-development
-                  agreements in this sector.
-                </p>
-                <Link
-                  href="/contact/"
-                  className="inline-flex items-center gap-1.5 text-[#0066FF] text-xs font-bold hover:gap-2.5 transition-all duration-200"
-                >
-                  Start a conversation <ArrowRight size={12} />
-                </Link>
+              <div className="flex items-center justify-between">
+                <span className="text-[#0066FF] text-xs font-bold uppercase tracking-wide">
+                  {market.highlight}
+                </span>
+                <span className="inline-flex items-center gap-1 text-[#0066FF] text-sm font-semibold group-hover:gap-2 transition-all duration-200">
+                  Learn more <ArrowRight size={14} />
+                </span>
               </div>
-            </div>
+            </Link>
+          ))}
+        </div>
+      </SectionWrapper>
+
+      {/* Patent Bar */}
+      <section className="bg-[#0066FF] py-5">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-white text-sm font-semibold">
+            <span>US Patent 9,968,930 B2</span>
+            <span className="text-white/40 hidden md:inline">·</span>
+            <span>Active Until 2034</span>
+            <span className="text-white/40 hidden md:inline">·</span>
+            <span>Cited by 44 Patents</span>
+            <span className="text-white/40 hidden md:inline">·</span>
+            <Link href="/ip-portfolio/" className="underline underline-offset-2 hover:text-white/80">
+              View IP Portfolio →
+            </Link>
           </div>
-        </SectionWrapper>
-      ))}
+        </div>
+      </section>
 
       {/* Bottom CTA */}
       <SectionWrapper dark>
