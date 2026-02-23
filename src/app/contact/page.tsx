@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { Mail, Phone, Shield, ArrowRight } from "lucide-react";
 
 // Paste your Google Apps Script Web App URL here after setup (see README)
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIMcOwZTcYqKh4-qJ7I16DZroJAhcZIO3WezTZUKxvOr2NAd6sawnaEwfsIH0bVFhZ/exec";
 
 const inquiryTypes = [
   "Licensing Inquiry",
