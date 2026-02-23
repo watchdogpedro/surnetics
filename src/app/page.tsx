@@ -115,7 +115,7 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-white font-extrabold text-4xl md:text-5xl xl:text-6xl leading-[1.08] tracking-tight mb-6 animate-fade-up delay-100">
-                The Only Patented Platform That Moves Liquids{" "}
+                The Only Patented Technology That Moves Liquids{" "}
                 <span className="text-[#0066FF]">Without Pumps</span>
               </h1>
 
