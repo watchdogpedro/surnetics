@@ -3,6 +3,8 @@ import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import SectionWrapper from "@/components/SectionWrapper";
+import ApplicationAccordion from "@/components/ApplicationAccordion";
+import type { ApplicationItem } from "@/components/ApplicationAccordion";
 import { FlaskConical, CheckCircle2, ArrowRight, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -53,6 +55,93 @@ const advantages = [
   },
 ];
 
+const deepDiveApplications: ApplicationItem[] = [
+  {
+    title: "Lateral Flow Immunoassays",
+    tagline: "The most widely deployed rapid diagnostic format — pregnancy tests, COVID antigen tests, cardiac markers.",
+    fluidRole: "Sample fluid (blood, saliva, urine) must wick through a nitrocellulose membrane at a precise, consistent rate to bind with detection antibodies. Too fast and sensitivity drops. Too slow and the test takes too long or gives false results.",
+    criticality: "Flow rate directly determines test sensitivity and specificity. Inconsistent flow is the #1 cause of false negatives in lateral flow assays. Current wicking-based flow control is crude — once the membrane is manufactured, flow rate cannot be tuned.",
+    impact: "Surnetics coatings replace passive wicking with engineered flow. Each channel can be tuned to an exact velocity after manufacturing. This enables multi-analyte tests on a single strip with different flow rates per channel — impossible with conventional lateral flow.",
+    details: [
+      "Replaces nitrocellulose wicking with precision-engineered capillary flow",
+      "Enables multi-analyte panels on a single test strip (e.g., flu A + flu B + COVID on one device)",
+      "Flow rate can be adjusted post-manufacturing by changing the coating formulation",
+      "Eliminates the batch-to-batch variability inherent in membrane-based wicking",
+      "Applicable to blood, saliva, urine, and nasal swab sample types",
+    ],
+  },
+  {
+    title: "Molecular Diagnostics (PCR & Amplification)",
+    tagline: "Nucleic acid testing for infectious disease, genetic screening, and cancer detection — the gold standard in diagnostic accuracy.",
+    fluidRole: "PCR cartridges must move a sample through multiple temperature zones and reagent mixing chambers in exact sequence and at precise volumes. Current systems use syringe pumps or pneumatic actuators — the most expensive components in the system.",
+    criticality: "If fluid delivery is off by even microliters, amplification fails or gives quantitatively inaccurate results. The pumps and actuators required for this precision make cartridge-reader systems cost $5,000–$50,000+, limiting deployment to central labs.",
+    impact: "Passive gradient flow can move precise volumes through sequential chambers without any pump. This could collapse the cost of a molecular diagnostic reader from tens of thousands of dollars to hundreds — enabling true point-of-care molecular testing.",
+    details: [
+      "Eliminates syringe pumps and pneumatic actuators from cartridge-reader systems",
+      "Passive sequential delivery through lysis, amplification, and detection chambers",
+      "Could reduce molecular diagnostic reader cost from $15,000+ to under $500",
+      "Enables field-deployable molecular testing for infectious disease surveillance",
+      "Compatible with isothermal amplification methods (LAMP, RPA) for simplified thermal design",
+    ],
+  },
+  {
+    title: "Blood Chemistry & Metabolic Panels",
+    tagline: "Comprehensive metabolic panels, liver function, kidney function, electrolytes — currently requiring centralized lab analyzers.",
+    fluidRole: "Whole blood must be separated into plasma, then routed to multiple reagent pads simultaneously — each measuring a different analyte. Current portable analyzers use complex pump-and-valve manifolds to split and direct the sample.",
+    criticality: "Precise volume delivery to each reagent pad is essential for quantitative accuracy. Over- or under-filling a chamber by even 10% produces clinically misleading results. The fluid handling system is the complexity bottleneck preventing miniaturization.",
+    impact: "A single Surnetics-coated channel layer can split a blood sample into 8–12 parallel paths, each at a different calibrated flow rate, with no pump or valve. This enables a complete metabolic panel on a credit-card-sized cartridge read by a handheld device.",
+    details: [
+      "Parallel multi-channel flow splitting from a single sample input — no manifold required",
+      "Each channel independently calibrated to deliver the exact volume for its reagent pad",
+      "Enables complete basic or comprehensive metabolic panels on a disposable cartridge",
+      "Handheld reader replaces $100,000+ benchtop analyzers for routine blood chemistry",
+      "Critical for emergency departments, ambulances, rural clinics, and military field medicine",
+    ],
+  },
+  {
+    title: "Infectious Disease Rapid Tests",
+    tagline: "Malaria, HIV, tuberculosis, dengue, hepatitis — the highest-volume diagnostic need in global health.",
+    fluidRole: "Sample must flow through capture and detection zones at controlled speed to achieve adequate binding time with target antigens or antibodies. In resource-limited settings, the device must work with no electricity, no refrigeration, and no trained operator.",
+    criticality: "In low-resource settings, any requirement for external power, pumps, or reader hardware makes a diagnostic test unusable. The device must be entirely self-contained. Current lateral flow tests work but lack sensitivity for early-stage infections where treatment intervention is most effective.",
+    impact: "Surnetics enables a new class of self-powered diagnostic devices with flow precision far beyond conventional lateral flow — achieving near-lab sensitivity in a format that requires nothing but the sample. Potential to detect infections days earlier than current rapid tests.",
+    details: [
+      "Fully self-contained — no power, no reader, no cold chain required",
+      "Engineered flow rates increase antibody-antigen binding time for higher sensitivity",
+      "Multi-stage sample processing (lysis, mixing, detection) on a single passive device",
+      "Applicable to finger-prick blood, oral fluid, and urine samples",
+      "WHO ASSURED criteria alignment: Affordable, Sensitive, Specific, User-friendly, Rapid, Equipment-free, Deliverable",
+    ],
+  },
+  {
+    title: "Continuous Glucose & Biomarker Monitoring",
+    tagline: "Wearable biosensors for real-time glucose, lactate, cortisol, and other biomarker tracking.",
+    fluidRole: "Interstitial fluid or sweat must be continuously drawn into a microfluidic sensing chamber, measured, and flushed — creating a real-time monitoring loop. Current wearable biosensors rely on osmotic or electrochemical pumping that degrades over days.",
+    criticality: "Continuous monitoring requires continuous fluid flow. If flow stops or becomes irregular, readings become unreliable. Sensor fouling from stagnant fluid is the primary failure mode in wearable biosensors. Current solutions last 10–14 days before flow degradation forces replacement.",
+    impact: "Surnetics coatings could maintain consistent passive flow through wearable sensor chambers for the full device lifetime — extending sensor accuracy duration and eliminating the need for on-board micro-pumps that drain battery and add bulk.",
+    details: [
+      "Maintains consistent flow through wearable sensing chambers without micro-pumps",
+      "Reduces sensor fouling by preventing fluid stagnation in the measurement chamber",
+      "Could extend continuous glucose monitor accuracy from 10 days to 14+ days",
+      "Eliminates battery drain from on-board fluid management — extending wearable device life",
+      "Applicable to interstitial fluid, sweat, and tear-based biosensing platforms",
+    ],
+  },
+  {
+    title: "Microarray & High-Throughput Screening",
+    tagline: "Genomic microarrays, protein arrays, and drug screening platforms processing thousands of samples.",
+    fluidRole: "Reagents and samples must be delivered to thousands of individual reaction spots on an array surface with uniform volume and timing. Current systems use robotic liquid handlers costing $50,000–$500,000.",
+    criticality: "Non-uniform fluid delivery across an array produces spot-to-spot variability that corrupts data. Robotic liquid handlers are precise but expensive, slow, and require dedicated lab space and trained operators. Throughput is limited by the mechanical speed of the handler.",
+    impact: "Passive gradient-driven flow across array surfaces could deliver uniform reagent volumes to thousands of spots simultaneously — no robotics required. This could dramatically reduce the cost and size of array-based screening platforms.",
+    details: [
+      "Uniform passive reagent delivery across array surfaces — no robotic handler required",
+      "Thousands of reaction spots served simultaneously by gradient-driven flow",
+      "Could reduce array platform cost from $100,000+ to under $10,000",
+      "Enables portable array-based screening for field genomics and proteomics",
+      "Compatible with DNA, RNA, protein, and small-molecule array formats",
+    ],
+  },
+];
+
 export default function IVDDiagnosticsPage() {
   return (
     <>
@@ -85,7 +174,7 @@ export default function IVDDiagnosticsPage() {
         </div>
       </section>
 
-      {/* Problem */}
+      {/* Problem / Solution */}
       <SectionWrapper>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
@@ -166,12 +255,30 @@ export default function IVDDiagnosticsPage() {
         </div>
       </SectionWrapper>
 
-      {/* Applications */}
+      {/* Applications Deep Dive */}
       <SectionWrapper>
+        <div className="max-w-3xl mb-12">
+          <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-3">
+            Applications Deep Dive
+          </p>
+          <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight mb-4">
+            How Fluid Control Shapes Every IVD Application
+          </h2>
+          <p className="text-[#8892A4] text-base leading-relaxed">
+            Click any application to explore how precise fluid management
+            determines diagnostic performance — and how Surnetics technology
+            transforms what is possible.
+          </p>
+        </div>
+        <ApplicationAccordion items={deepDiveApplications} />
+      </SectionWrapper>
+
+      {/* Applications List */}
+      <SectionWrapper gray>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-3">
-              Applications
+              Full Application Scope
             </p>
             <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight mb-4">
               Where It Applies
@@ -186,7 +293,7 @@ export default function IVDDiagnosticsPage() {
             {applications.map((app) => (
               <li
                 key={app}
-                className="flex items-center gap-3 p-4 bg-[#F5F7FA] rounded-lg border border-[#E2E8F0]"
+                className="flex items-center gap-3 p-4 bg-white rounded-lg border border-[#E2E8F0]"
               >
                 <CheckCircle2
                   size={16}
