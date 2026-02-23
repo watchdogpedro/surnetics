@@ -2,48 +2,24 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* ─── Google Fonts ───────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap');
+/* Inter is loaded via next/font/google in layout.tsx */
 
 @custom-variant dark (&:is(.dark *));
 
-/* ─── Brand Design Tokens ────────────────────────────────────── */
 @theme inline {
-  /* Fonts */
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-sans: var(--font-body);
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
 
-  /* Brand Colors — swap these when brand direction is confirmed */
-  --color-brand-900: var(--brand-900);
-  --color-brand-800: var(--brand-800);
-  --color-brand-700: var(--brand-700);
-  --color-brand-600: var(--brand-600);
-  --color-brand-500: var(--brand-500);
-  --color-brand-400: var(--brand-400);
-  --color-brand-300: var(--brand-300);
-  --color-brand-100: var(--brand-100);
+  --color-navy:       var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-blue:       var(--blue);
+  --color-blue-light: var(--blue-light);
+  --color-gray-light: var(--gray-light);
+  --color-gray-mid:   var(--gray-mid);
+  --color-gray-dark:  var(--gray-dark);
 
-  --color-accent-primary: var(--accent-primary);
-  --color-accent-secondary: var(--accent-secondary);
-
-  /* shadcn surface tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -56,104 +32,51 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
 
-  /* Radius scale */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* ─── Light Mode ─────────────────────────────────────────────── */
 :root {
-  /* Brand palette — placeholder, swap per brief */
-  --brand-900: #0a0f1e;
-  --brand-800: #111827;
-  --brand-700: #1e293b;
-  --brand-600: #334155;
-  --brand-500: #475569;
-  --brand-400: #94a3b8;
-  --brand-300: #cbd5e1;
-  --brand-100: #f1f5f9;
+  /* Brand */
+  --navy:       #0A1628;
+  --navy-light: #112040;
+  --blue:       #0066FF;
+  --blue-light: #E8F0FF;
+  --gray-light: #F5F7FA;
+  --gray-mid:   #8892A4;
+  --gray-dark:  #2D3748;
 
-  --accent-primary: #0066ff;
-  --accent-secondary: #00e5ff;
+  /* Radius */
+  --radius: 0.5rem;
 
-  /* Surface */
-  --radius: 0.375rem;
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.1 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.1 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.1 0 0);
-  --primary: oklch(0.2 0 0);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.96 0 0);
-  --secondary-foreground: oklch(0.2 0 0);
-  --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.96 0 0);
-  --accent-foreground: oklch(0.2 0 0);
+  /* shadcn surfaces */
+  --background: #ffffff;
+  --foreground: #2D3748;
+  --card: #ffffff;
+  --card-foreground: #2D3748;
+  --popover: #ffffff;
+  --popover-foreground: #2D3748;
+  --primary: #0A1628;
+  --primary-foreground: #ffffff;
+  --secondary: #F5F7FA;
+  --secondary-foreground: #2D3748;
+  --muted: #F5F7FA;
+  --muted-foreground: #8892A4;
+  --accent: #E8F0FF;
+  --accent-foreground: #0066FF;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(0.7 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.97 0 0);
-  --sidebar-foreground: oklch(0.1 0 0);
-  --sidebar-primary: oklch(0.2 0 0);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.94 0 0);
-  --sidebar-accent-foreground: oklch(0.2 0 0);
-  --sidebar-border: oklch(0.9 0 0);
-  --sidebar-ring: oklch(0.7 0 0);
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #0066FF;
 }
 
-/* ─── Dark Mode ──────────────────────────────────────────────── */
-.dark {
-  --background: oklch(0.1 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.15 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.15 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.92 0 0);
-  --primary-foreground: oklch(0.15 0 0);
-  --secondary: oklch(0.22 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.22 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.22 0 0);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.5 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.14 0 0);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.22 0 0);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.5 0 0);
-}
-
-/* ─── Base Styles ────────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -167,84 +90,51 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-body);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #2D3748;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+    font-family: 'Inter', system-ui, sans-serif;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: #0A1628;
   }
 }
 
-/* ─── Design System Utilities ────────────────────────────────── */
 @layer utilities {
-  /* Typography */
-  .font-display { font-family: var(--font-display); }
-  .font-body    { font-family: var(--font-body); }
+  .section-pad   { @apply py-20 md:py-28; }
+  .section-pad-sm { @apply py-12 md:py-16; }
+  .container-site { @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .container-narrow { @apply mx-auto max-w-4xl px-4 sm:px-6 lg:px-8; }
 
-  /* Tight heading tracking */
-  .tracking-tight-xl { letter-spacing: -0.04em; }
-  .tracking-tight-lg { letter-spacing: -0.03em; }
-  .tracking-tight-md { letter-spacing: -0.02em; }
+  .text-navy      { color: #0A1628; }
+  .text-blue      { color: #0066FF; }
+  .text-gray-mid  { color: #8892A4; }
+  .text-gray-dark { color: #2D3748; }
+  .bg-navy        { background-color: #0A1628; }
+  .bg-navy-light  { background-color: #112040; }
+  .bg-blue        { background-color: #0066FF; }
+  .bg-blue-light  { background-color: #E8F0FF; }
+  .bg-gray-light  { background-color: #F5F7FA; }
 
-  /* Brand accent gradient */
-  .gradient-brand {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  .heading-xl { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+  .heading-lg { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; }
+  .heading-md { font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
+
+  .animate-fade-up {
+    animation: fadeUp 0.65s ease-out both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  .text-gradient-brand {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Noise texture overlay */
-  .noise {
-    position: relative;
-  }
-  .noise::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    border-radius: inherit;
-  }
-
-  /* Bold border utility */
-  .border-bold { border-width: 2px; }
-  .border-heavy { border-width: 3px; }
-
-  /* Section spacing */
-  .section-pad { @apply py-20 md:py-28 lg:py-36; }
-  .section-pad-sm { @apply py-12 md:py-16 lg:py-20; }
-
-  /* Container max widths */
-  .container-tight { @apply mx-auto max-w-4xl px-4 sm:px-6 lg:px-8; }
-  .container-wide  { @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8; }
-
-  /* Staggered animation delays */
   .delay-100 { animation-delay: 100ms; }
   .delay-200 { animation-delay: 200ms; }
   .delay-300 { animation-delay: 300ms; }
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
-
-  /* Fade-up entry animation */
-  .animate-fade-up {
-    animation: fadeUp 0.6s ease-out both;
-  }
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 }
