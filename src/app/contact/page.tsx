@@ -6,8 +6,8 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Mail, Phone, Shield, ArrowRight } from "lucide-react";
 
-// Replace with your Formspree form ID after creating at formspree.io
-const FORMSPREE_ACTION = "https://formspree.io/f/YOUR_FORM_ID";
+// Paste your Google Apps Script Web App URL here after setup (see README)
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
 
 const inquiryTypes = [
   "Licensing Inquiry",
@@ -37,17 +37,23 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("submitting");
     try {
-      const res = await fetch(FORMSPREE_ACTION, {
+      // Google Apps Script requires form-encoded data with no-cors mode
+      await fetch(APPS_SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(form),
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          phone: form.phone,
+          inquiryType: form.inquiryType,
+          message: form.message,
+        }).toString(),
       });
-      if (res.ok) {
-        setStatus("success");
-        setForm({ name: "", company: "", email: "", phone: "", inquiryType: "", message: "" });
-      } else {
-        setStatus("error");
-      }
+      // no-cors means we can't read the response — optimistically show success
+      setStatus("success");
+      setForm({ name: "", company: "", email: "", phone: "", inquiryType: "", message: "" });
     } catch {
       setStatus("error");
     }

@@ -45,18 +45,62 @@ vercel --prod --yes
 
 ---
 
-## Contact Form Setup (Formspree)
+## Contact Form Setup (Google Sheets via Apps Script)
 
-The contact form uses Formspree. To activate:
+Form submissions go directly into a Google Sheet. Setup takes ~5 minutes.
 
-1. Go to formspree.io and create a free account
-2. Create a new form — copy the Form ID (e.g. `xabcdefg`)
-3. Open `src/app/contact/page.tsx`
-4. Replace `YOUR_FORM_ID` with your actual form ID:
+### Step 1 — Create the Google Sheet
+1. Go to sheets.google.com and create a new spreadsheet
+2. Name it **Surnetics Contact Forms**
+3. In row 1, add these headers in columns A–G:
    ```
-   const FORMSPREE_ACTION = "https://formspree.io/f/xabcdefg";
+   Timestamp | Name | Company | Email | Phone | Inquiry Type | Message
    ```
-5. Commit and push — form is live immediately
+
+### Step 2 — Create the Apps Script
+1. In the sheet, click **Extensions → Apps Script**
+2. Delete the default code and paste this:
+
+```javascript
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var p = e.parameter;
+  sheet.appendRow([
+    new Date(),
+    p.name || '',
+    p.company || '',
+    p.email || '',
+    p.phone || '',
+    p.inquiryType || '',
+    p.message || ''
+  ]);
+  return ContentService
+    .createTextOutput(JSON.stringify({ result: 'success' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+```
+
+3. Click **Save** (name the project anything, e.g. "Surnetics Form")
+
+### Step 3 — Deploy as Web App
+1. Click **Deploy → New deployment**
+2. Click the gear icon next to "Type" → select **Web app**
+3. Set:
+   - **Execute as:** Me
+   - **Who has access:** Anyone
+4. Click **Deploy**
+5. Authorize the permissions when prompted
+6. Copy the **Web app URL** (looks like `https://script.google.com/macros/s/XXXXX/exec`)
+
+### Step 4 — Add the URL to the site
+1. Open `src/app/contact/page.tsx`
+2. Replace `YOUR_SCRIPT_ID` with your actual URL:
+   ```
+   const APPS_SCRIPT_URL = "https://script.google.com/macros/s/XXXXX/exec";
+   ```
+3. Commit and push — form is live
+
+> **Note:** Each time you edit the Apps Script, you must create a **New Deployment** (not update existing) for changes to take effect.
 
 ---
 
