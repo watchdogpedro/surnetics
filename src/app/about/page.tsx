@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "About | Team & Company",
   description:
-    "Surnetics LLC — inventors and commercializers of patented Surface Energy Gradient Coating technology. Meet the team: Brian Babcock (inventor), Paul Denman, Jeff Shonkwiler, and Terry Rusch.",
+    "Surnetics LLC — inventors and commercializers of patented Surface Energy Gradient Coating technology. Meet the team: Brian Babcock (inventor) and Paul Denman.",
 };
 
 const team = [
@@ -39,34 +39,6 @@ const team = [
       "Global technology scout and commercialization expert",
       "Experience in M&A, joint development, and technology partnerships",
       "Extensive global industry contacts across target markets",
-    ],
-  },
-  {
-    initials: "JS",
-    name: "Jeff Shonkwiler",
-    title: "Director of Manufacturing",
-    bio: "Jeff is a recognized expert in microfluidic IVD device manufacturing and scale-up. His experience spans the full commercialization journey from prototype through high-volume production, with tenures at leading medical device and technology companies.",
-    credentials: [
-      "Expert in microfluidic IVD device manufacturing and scale-up",
-      "Medtronic",
-      "St. Jude Medical",
-      "IBM",
-      "3M",
-      "Ativa Medical",
-    ],
-  },
-  {
-    initials: "TR",
-    name: "Terry Rusch",
-    title: "Senior Advisor",
-    bio: "Terry brings over 20 years of experience in DNA diagnostics and genetic testing, including hands-on work with some of the most demanding microfluidic assay platforms in the industry. His invention work and cost reduction achievements are a benchmark for what precision engineering can accomplish.",
-    credentials: [
-      "20+ years in DNA diagnostics and genetic testing",
-      "Marshfield Clinic",
-      "Prevention Genetics",
-      "Douglas Scientific",
-      "Lead inventor on genotyping patents",
-      "Reduced genotype test cost from $2.50 to $0.05",
     ],
   },
 ];

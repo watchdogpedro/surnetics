@@ -93,15 +93,14 @@ export default function HomePage() {
 
       {/* ─── Hero ─────────────────────────────────────────────── */}
       <section className="relative min-h-screen bg-[#0A1628] flex flex-col justify-center overflow-hidden">
-        {/* Background grid */}
+        {/* Hero background image */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero-bg.png')" }}
         />
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0 bg-[#0A1628]/70" />
+
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -115,13 +114,13 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-white font-extrabold text-4xl md:text-5xl xl:text-6xl leading-[1.08] tracking-tight mb-6 animate-fade-up delay-100">
-                The Only Patented Technology That Moves Liquids{" "}
-                <span className="text-[#0066FF]">Without Pumps</span>
+                Eliminate the Instrument.{" "}
+                <span className="text-[#0066FF]">Own the Market.</span>
               </h1>
 
-              <p className="text-white/60 text-lg md:text-xl leading-relaxed mb-10 max-w-lg animate-fade-up delay-200">
-                Surface Energy Gradient Coating Technology — Licensed Across Six
-                Industries. No pumps, no valves, no controllers. Just physics.
+              <p className="text-white text-lg md:text-xl leading-relaxed mb-10 max-w-lg animate-fade-up delay-200">
+                The only passive fluid technology that enables true lab-on-a-chip
+                diagnostics — no pumps, no readers, no barriers to adoption.
               </p>
 
               <div className="flex flex-wrap gap-4 animate-fade-up delay-300">
@@ -312,8 +311,6 @@ export default function HomePage() {
             {[
               { initials: "BB", name: "Brian Babcock", role: "Inventor & President", credential: "Registered US Patent Agent · Vanderbilt B.S./M.S. ChemE · Argonne National Laboratory" },
               { initials: "PD", name: "Paul Denman", role: "Co-Founder & Business Dev", credential: "20+ yrs life sciences, medical device, semiconductor, defense" },
-              { initials: "JS", name: "Jeff Shonkwiler", role: "Director of Manufacturing", credential: "Medtronic · St. Jude Medical · IBM · 3M · Microfluidic IVD expert" },
-              { initials: "TR", name: "Terry Rusch", role: "Senior Advisor", credential: "20+ yrs DNA diagnostics · Marshfield Clinic · Genotyping patents" },
             ].map((m) => (
               <div key={m.name} className="text-center">
                 <div className="w-14 h-14 rounded-full bg-[#0A1628] flex items-center justify-center mx-auto mb-3">

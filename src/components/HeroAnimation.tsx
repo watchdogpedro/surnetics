@@ -12,9 +12,9 @@ export default function HeroAnimation() {
 
   // 3 fluid slugs with staggered positions
   const slugs = [
-    { initialX: channelLeft, delay: 0 },
-    { initialX: channelLeft + 130, delay: 0 },
-    { initialX: channelLeft + 260, delay: 0 },
+    { initialX: channelLeft,       delay: 0, color: "#FF2020" },
+    { initialX: channelLeft + 130, delay: 0, color: "#FFD700" },
+    { initialX: channelLeft + 260, delay: 0, color: "#00FF44" },
   ];
 
   return (
@@ -73,7 +73,7 @@ export default function HeroAnimation() {
             y={channelTop + 2}
             width={90}
             height={channelHeight - 4}
-            fill="url(#fluidGrad)"
+            fill={slug.color}
             rx="3"
             clipPath="url(#channelClip)"
             initial={{ x: slug.initialX }}
