@@ -3,20 +3,72 @@ import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import SectionWrapper from "@/components/SectionWrapper";
-import PatentCard from "@/components/PatentCard";
-import { Shield, Globe, ArrowRight, FileText } from "lucide-react";
+import { Shield, Globe, ArrowRight, FileText, CheckCircle, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "IP Portfolio | Patented Microfluidic Technology",
   description:
-    "Surnetics holds an active US patent portfolio protecting Surface Energy Gradient Coating technology. US Patent 9,968,930 B2, active until 2034, cited by 44 subsequent patents.",
+    "Surnetics holds an active US patent portfolio of 5 granted patents protecting Surface Energy Gradient Coating technology. Portfolio extends through 2041.",
 };
 
-const worldwideApps = [
-  { year: "2014", label: "PCT Application Filed", description: "International Patent Cooperation Treaty application filing establishes worldwide priority." },
-  { year: "2018", label: "US Patent Granted", description: "US 9,968,930 B2 granted May 15, 2018. Core claims covering microfluidic products with controlled fluid flow." },
-  { year: "2020", label: "Continuation Application", description: "US continuation application filed, extending patent family with additional claim scope." },
-  { year: "2023", label: "Continuation Application", description: "Additional US continuation application filed, further broadening the protected claim landscape." },
+const grantedPatents = [
+  {
+    number: "US 12,263,480",
+    title: "Diagnostic Device with Integrated Sampler and Holder",
+  },
+  {
+    number: "US 12,083,517",
+    title: "Microfluidic Products with Controlled Fluid Flow",
+  },
+  {
+    number: "US 11,583,858",
+    title: "Microfluidic Diagnostics with Controlled Fluid Flow",
+  },
+  {
+    number: "US 10,821,438",
+    title: "Microfluidic Diagnostics with Controlled Fluid Flow",
+  },
+  {
+    number: "US 9,968,930",
+    title: "Microfluidic Products with Controlled Fluid Flow",
+  },
+];
+
+const pendingApplications = [
+  {
+    number: "US Pat. Appl. 17/114,390",
+    title: "Diagnostic Device with Integrated Sampler and Holder",
+    note: "Allowed",
+  },
+  {
+    number: "US Pat. Appl. 18/826,821",
+    title: "Microfluidic Products with Controlled Fluid Flow",
+    note: null,
+  },
+  {
+    number: "US Patent Appl. 19/051,462",
+    title: "Diagnostic Device with Integrated Sampler and Holder",
+    note: null,
+  },
+];
+
+const technologyStatus = [
+  "Programmable, automated system for large-scale manufacturing coating process designed and installed.",
+  "Can be adapted to a variety of precision coating systems.",
+  "Can easily be scaled for larger applications.",
+  "Manufacturing costs and manufacturing quality established for the coating process.",
+  "PFAS-free hydrophobic coatings developed.",
+  "Coatings with FDA-approved chemistry developed.",
+  "Products have been produced for and tested with diagnostic companies since 2014.",
+  "Demonstrated that gradient coatings control flow rates to targeted flow rates with <10% variation across manufactured lots.",
+  "Coatings have been used with blood, plasma, wash solutions, and other reagent liquids.",
+];
+
+const additionalIP = [
+  "Coating formulations for metal, glass, and plastic surfaces.",
+  "Coating processes and equipment specifications.",
+  "Predictive flow model and material test data for product designs.",
+  "Preferred materials and coating compositions with specific liquids.",
 ];
 
 export default function IPPortfolioPage() {
@@ -29,50 +81,156 @@ export default function IPPortfolioPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-4">
-              Intellectual Property
+              Intellectual Property — Updated March 3, 2026
             </p>
             <h1 className="text-white font-extrabold text-4xl md:text-5xl leading-tight tracking-tight mb-6">
-              A Deep Patent Portfolio Built to Protect Your Investment
+              Surface Gradient Coating IP Portfolio
             </h1>
             <p className="text-white/60 text-lg leading-relaxed">
-              Surnetics technology is protected by an active US patent portfolio
-              with continuation applications extending protection through 2034 and
-              beyond. Partners gain exclusive access to technology that cannot be
+              Surnetics technology is protected by a portfolio of 5 granted US
+              patents with continuation applications extending protection through
+              2041. Partners gain exclusive access to technology that cannot be
               commercially replicated.
             </p>
+          </div>
+
+          {/* Stats row */}
+          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { value: "5", label: "Granted Patents" },
+              { value: "3", label: "Pending Applications" },
+              { value: "44", label: "Patent Citations" },
+              { value: "2041", label: "Portfolio Extends To" },
+            ].map((stat) => (
+              <div key={stat.label} className="border border-white/10 rounded-xl px-5 py-5">
+                <p className="text-[#0066FF] font-extrabold text-3xl md:text-4xl tracking-tight mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-white/50 text-xs font-semibold uppercase tracking-widest">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Patent */}
+      {/* Granted Patents */}
       <SectionWrapper gray>
-        <div className="max-w-2xl mb-12">
-          <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-3">
-            Core Patent
-          </p>
+        <div className="max-w-2xl mb-10">
+          <div className="flex items-center gap-3 mb-4">
+            <Shield size={20} className="text-[#0066FF]" />
+            <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest">
+              Granted US Patents
+            </p>
+          </div>
           <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight mb-4">
-            The Foundation of the Portfolio
+            5 Active US Patents
           </h2>
           <p className="text-[#8892A4] text-base leading-relaxed">
-            The core issued patent covers the fundamental method and apparatus for
-            creating surface energy gradients that passively control fluid flow in
-            microfluidic channels.
+            All patents are assigned to Surnetics LLC and cover the core methods,
+            products, and devices built on Surface Energy Gradient Coating
+            technology.
           </p>
         </div>
 
-        <div className="max-w-2xl">
-          <PatentCard
-            number="US 9,968,930 B2"
-            title="Microfluidic Products with Controlled Fluid Flow"
-            inventor="Brian David Babcock"
-            assignee="Surnetics LLC"
-            filed="March 26, 2014"
-            granted="May 15, 2018"
-            expires="2034"
-            claims={20}
-            citations={44}
-            status="ACTIVE"
-          />
+        <div className="space-y-3">
+          {grantedPatents.map((patent, i) => (
+            <div
+              key={patent.number}
+              className="flex flex-col sm:flex-row sm:items-center gap-4 bg-white border border-[#E2E8F0] rounded-xl px-6 py-5"
+            >
+              {/* Index */}
+              <div className="w-8 h-8 rounded-full bg-[#E8F0FF] flex items-center justify-center text-[#0066FF] font-bold text-sm flex-shrink-0">
+                {i + 1}
+              </div>
+
+              {/* Patent number */}
+              <div className="sm:w-48 flex-shrink-0">
+                <p className="text-[#0A1628] font-bold text-sm tracking-tight">
+                  {patent.number}
+                </p>
+              </div>
+
+              {/* Title */}
+              <div className="flex-1">
+                <p className="text-[#4A5568] text-sm leading-relaxed">
+                  {patent.title}
+                </p>
+              </div>
+
+              {/* Status badge */}
+              <div className="flex-shrink-0">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-green-50 text-green-600 border border-green-200">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  Granted
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </SectionWrapper>
+
+      {/* Pending Applications */}
+      <SectionWrapper>
+        <div className="max-w-2xl mb-10">
+          <div className="flex items-center gap-3 mb-4">
+            <Clock size={20} className="text-[#0066FF]" />
+            <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest">
+              Pending US Applications
+            </p>
+          </div>
+          <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight mb-4">
+            3 Applications in Prosecution
+          </h2>
+          <p className="text-[#8892A4] text-base leading-relaxed">
+            Continuation applications extend and expand the scope of protection,
+            preserving priority dates while broadening the claim landscape through
+            2041.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {pendingApplications.map((app) => (
+            <div
+              key={app.number}
+              className="flex flex-col sm:flex-row sm:items-center gap-4 bg-[#F5F7FA] border border-[#E2E8F0] rounded-xl px-6 py-5"
+            >
+              {/* Icon */}
+              <div className="w-8 h-8 rounded-full bg-[#FFF7E8] flex items-center justify-center flex-shrink-0">
+                <FileText size={14} className="text-[#D97706]" />
+              </div>
+
+              {/* App number */}
+              <div className="sm:w-64 flex-shrink-0">
+                <p className="text-[#0A1628] font-bold text-sm tracking-tight">
+                  {app.number}
+                </p>
+              </div>
+
+              {/* Title */}
+              <div className="flex-1">
+                <p className="text-[#4A5568] text-sm leading-relaxed">
+                  {app.title}
+                </p>
+              </div>
+
+              {/* Status badge */}
+              <div className="flex-shrink-0">
+                {app.note ? (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-600 border border-blue-200">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                    {app.note}
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-yellow-50 text-yellow-600 border border-yellow-200">
+                    <span className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
+                    Pending
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </SectionWrapper>
 
@@ -100,97 +258,69 @@ export default function IPPortfolioPage() {
         </div>
       </section>
 
-      {/* Worldwide Applications Timeline */}
-      <SectionWrapper>
-        <div className="max-w-2xl mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Globe size={20} className="text-[#0066FF]" />
-            <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest">
-              Worldwide Coverage
+      {/* Technology Status */}
+      <SectionWrapper gray>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <CheckCircle size={20} className="text-[#0066FF]" />
+              <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest">
+                Technology Readiness
+              </p>
+            </div>
+            <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight mb-4">
+              Technology Status
+            </h2>
+            <p className="text-[#8892A4] text-base leading-relaxed">
+              The Surface Gradient Coating technology is production-ready with
+              established manufacturing processes, proven quality metrics, and
+              over a decade of real-world validation with diagnostic companies.
             </p>
           </div>
-          <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight mb-4">
-            Patent Family Timeline
-          </h2>
-          <p className="text-[#8892A4] text-base leading-relaxed">
-            The portfolio spans international filings and multiple US continuation
-            applications, reflecting a deliberate strategy to maximize protection
-            scope and longevity.
-          </p>
-        </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-[#E2E8F0] hidden md:block" />
-
-          <div className="space-y-6">
-            {worldwideApps.map((app, i) => (
-              <div key={i} className="relative md:pl-20">
-                {/* Dot */}
-                <div className="hidden md:flex absolute left-0 top-4 w-16 items-center justify-end">
-                  <div className="w-4 h-4 rounded-full bg-[#0066FF] border-4 border-white shadow-sm" />
-                </div>
-
-                <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-xl p-6">
-                  <div className="flex flex-wrap items-start gap-4 justify-between mb-2">
-                    <span className="text-[#0066FF] font-extrabold text-xl">{app.year}</span>
-                    <span className="text-[#0A1628] font-semibold text-sm">{app.label}</span>
-                  </div>
-                  <p className="text-[#8892A4] text-sm leading-relaxed">{app.description}</p>
-                </div>
+          <div className="space-y-3">
+            {technologyStatus.map((item, i) => (
+              <div key={i} className="flex items-start gap-3 bg-white border border-[#E2E8F0] rounded-xl px-5 py-4">
+                <CheckCircle size={16} className="text-green-500 mt-0.5 flex-shrink-0" />
+                <p className="text-[#4A5568] text-sm leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </SectionWrapper>
 
-      {/* Continuation Applications */}
-      <SectionWrapper gray>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* Additional IP */}
+      <SectionWrapper>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <FileText size={20} className="text-[#0066FF]" />
               <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest">
-                Portfolio Depth
+                Additional Assets
               </p>
             </div>
-            <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight mb-6">
-              Continuation Applications
+            <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight mb-4">
+              Additional IP Available
             </h2>
-            <div className="space-y-4 text-[#8892A4] text-base leading-relaxed">
-              <p>
-                Beyond the core issued patent, the Surnetics portfolio includes
-                issued patents and continuation applications that extend and expand
-                the scope of protection.
-              </p>
-              <p>
-                Continuation applications preserve priority dates while allowing
-                claim refinement — a deliberate IP strategy that strengthens the
-                portfolio and increases the difficulty of designing around the
-                protected technology.
-              </p>
-              <p>
-                The portfolio has been developed and is maintained by Brian
-                Babcock, a Registered US Patent Agent with direct expertise in
-                patent portfolio development, analysis, and commercial valuation.
+            <p className="text-[#8892A4] text-base leading-relaxed mb-6">
+              Beyond the patent portfolio, Surnetics offers access to valuable
+              proprietary knowledge and trade secrets — available along with
+              technical training for qualified partners.
+            </p>
+            <div className="p-4 bg-[#E8F0FF] rounded-xl">
+              <p className="text-[#0066FF] text-xs font-semibold leading-relaxed">
+                Technical training available with IP transfer or licensing agreements.
               </p>
             </div>
           </div>
 
-          <div className="space-y-4">
-            {[
-              { icon: <Shield size={16} />, title: "Active Core Patent", desc: "US 9,968,930 B2 — issued and actively maintained. Full prosecution history available under NDA." },
-              { icon: <FileText size={16} />, title: "Continuation Applications", desc: "Multiple US continuation applications extending claim scope beyond the core patent." },
-              { icon: <Globe size={16} />, title: "International Priority", desc: "PCT filing establishes worldwide priority date from 2014." },
-            ].map((item) => (
-              <div key={item.title} className="flex items-start gap-4 p-5 bg-white border border-[#E2E8F0] rounded-xl">
-                <div className="w-9 h-9 rounded-lg bg-[#E8F0FF] flex items-center justify-center text-[#0066FF] flex-shrink-0">
-                  {item.icon}
+          <div className="space-y-3">
+            {additionalIP.map((item, i) => (
+              <div key={i} className="flex items-start gap-4 p-5 bg-[#F5F7FA] border border-[#E2E8F0] rounded-xl">
+                <div className="w-8 h-8 rounded-lg bg-[#E8F0FF] flex items-center justify-center text-[#0066FF] font-bold text-sm flex-shrink-0">
+                  {i + 1}
                 </div>
-                <div>
-                  <h3 className="text-[#0A1628] font-semibold text-sm mb-1">{item.title}</h3>
-                  <p className="text-[#8892A4] text-xs leading-relaxed">{item.desc}</p>
-                </div>
+                <p className="text-[#4A5568] text-sm leading-relaxed pt-1">{item}</p>
               </div>
             ))}
           </div>
@@ -209,7 +339,7 @@ export default function IPPortfolioPage() {
           <p className="text-white/60 text-base leading-relaxed mb-8">
             We are actively pursuing licensing partnerships, co-development
             agreements, and strategic partnerships across our six target markets.
-            Patent protection active through 2034 provides a long runway for
+            Patent protection active through 2041 provides a long runway for
             partners to build on this technology.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
