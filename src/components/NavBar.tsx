@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -37,13 +38,15 @@ export default function NavBar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded bg-[#0066FF] flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-black text-sm tracking-tight">S</span>
-            </div>
-            <span className="text-white font-bold text-lg tracking-tight">
-              Surnetics
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/surnetics-logo.png"
+              alt="Surnetics"
+              width={160}
+              height={52}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

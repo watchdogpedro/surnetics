@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = [
   { href: "/technology/", label: "Technology" },
@@ -38,11 +39,14 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Brand */}
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-7 h-7 rounded bg-[#0066FF] flex items-center justify-center">
-                  <span className="text-white font-black text-xs">S</span>
-                </div>
-                <span className="text-white font-bold text-base">Surnetics</span>
+              <div className="mb-4">
+                <Image
+                  src="/surnetics-logo.png"
+                  alt="Surnetics"
+                  width={140}
+                  height={46}
+                  className="h-9 w-auto object-contain brightness-0 invert"
+                />
               </div>
               <p className="text-white/50 text-sm leading-relaxed max-w-xs">
                 Patented Surface Energy Gradient Coating technology — the only
