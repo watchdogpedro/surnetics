@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import HeroAnimation from "@/components/HeroAnimation";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import MarketCard from "@/components/MarketCard";
+import Image from "next/image";
 import {
   FlaskConical,
   Cpu,
@@ -204,6 +205,18 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ─── Lab Image Banner ─────────────────────────────────── */}
+      <section className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
+        <Image
+          src="/lab-hero.png"
+          alt="Surnetics biomedical research laboratory"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F7FA]/60 via-transparent to-[#ffffff]/60" />
       </section>
 
       {/* ─── Markets Grid ─────────────────────────────────────── */}
