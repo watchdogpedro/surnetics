@@ -66,18 +66,16 @@ export default function HeroAnimation() {
           rx="2"
         />
 
-        {/* Animated fluid slugs */}
+        {/* Animated fluid droplets */}
         {slugs.map((slug, i) => (
-          <motion.rect
+          <motion.circle
             key={i}
-            y={channelTop + 2}
-            width={90}
-            height={channelHeight - 4}
+            cy={channelTop + channelHeight / 2}
+            r={channelHeight / 2 - 4}
             fill={slug.color}
-            rx="3"
             clipPath="url(#channelClip)"
-            initial={{ x: slug.initialX }}
-            animate={{ x: [slug.initialX, channelRight + 20, channelLeft - 110] }}
+            initial={{ cx: slug.initialX + 45 }}
+            animate={{ cx: [slug.initialX + 45, channelRight + 65, channelLeft - 65] }}
             transition={{
               duration: 4,
               delay: slug.delay,
