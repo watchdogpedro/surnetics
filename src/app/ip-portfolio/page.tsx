@@ -12,30 +12,40 @@ const grantedPatents = [
   {
     number: "US 12,263,480",
     title: "Diagnostic Device with Integrated Sampler and Holder",
+    summary: "Covers a complete sample collection and testing device that integrates the sampler and holder into a single unit — enabling fully self-contained point-of-care diagnostics with no separate fluid handling components.",
+    relevance: "POC Testing · Sample Collection · Cartridge Design",
     pdfFile: "/patents/US12263480.pdf",
     googlePatentsUrl: "https://patents.google.com/patent/US12263480B2/en",
   },
   {
     number: "US 12,083,517",
     title: "Microfluidic Products with Controlled Fluid Flow",
+    summary: "Protects the commercial product embodiments of surface energy gradient coatings applied to microfluidic channels — covering the manufactured devices that use the coating to move fluids without pumps.",
+    relevance: "Microfluidic Devices · Passive Flow · Commercial Products",
     pdfFile: "/patents/US12083517.pdf",
     googlePatentsUrl: "https://patents.google.com/patent/US12083517B2/en",
   },
   {
     number: "US 11,583,858",
     title: "Microfluidic Diagnostics with Controlled Fluid Flow",
+    summary: "Covers the application of gradient flow control specifically to diagnostic devices — protecting the use of this technology in lateral flow assays, immunoassays, and cartridge-based diagnostic systems.",
+    relevance: "IVD · Lateral Flow · Immunoassay · Diagnostics",
     pdfFile: "/patents/US11583858.pdf",
     googlePatentsUrl: "https://patents.google.com/patent/US11583858B2/en",
   },
   {
     number: "US 10,821,438",
     title: "Microfluidic Diagnostics with Controlled Fluid Flow",
+    summary: "An earlier foundational patent covering the diagnostic application of controlled fluid flow through surface energy gradients — establishes priority and broad claim scope for this entire technology family.",
+    relevance: "Foundational Patent · IVD Systems · Fluid Management",
     pdfFile: "/patents/US10821438.pdf",
     googlePatentsUrl: "https://patents.google.com/patent/US10821438B2/en",
   },
   {
     number: "US 9,968,930",
     title: "Microfluidic Products with Controlled Fluid Flow",
+    summary: "The original core patent — protects the fundamental method of using a surface energy gradient coating to self-propel liquid through a microchannel. This is the foundational claim that all subsequent patents build upon.",
+    relevance: "Core Method · Surface Energy Gradient · Foundational IP",
     pdfFile: "/patents/US9968930.pdf",
     googlePatentsUrl: "https://patents.google.com/patent/US9968930B2/en",
   },
@@ -180,21 +190,18 @@ export default function IPPortfolioPage() {
               <div className="flex overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-sm hover:shadow-xl hover:border-[#0066FF]/30 transition-all duration-300">
 
                 {/* Left panel — patent number */}
-                <div className="relative bg-[#0A1628] px-6 py-6 flex flex-col justify-between min-w-[180px] sm:min-w-[220px] flex-shrink-0 overflow-hidden">
-                  {/* Background number watermark */}
+                <div className="relative bg-[#0A1628] px-6 py-6 flex flex-col justify-between min-w-[160px] sm:min-w-[200px] flex-shrink-0 overflow-hidden">
                   <span className="absolute -right-3 -bottom-4 text-[80px] font-black text-white/5 leading-none select-none pointer-events-none">
                     {i + 1}
                   </span>
-
                   <div>
                     <p className="text-[#0066FF] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
                       US Patent
                     </p>
-                    <p className="text-white font-extrabold text-xl leading-tight tracking-tight group-hover:text-[#4DA3FF] transition-colors">
+                    <p className="text-white font-extrabold text-lg leading-tight tracking-tight group-hover:text-[#4DA3FF] transition-colors">
                       {patent.number}
                     </p>
                   </div>
-
                   <div className="mt-4 flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                     <span className="text-green-400 text-[10px] font-bold uppercase tracking-widest">
@@ -203,25 +210,28 @@ export default function IPPortfolioPage() {
                   </div>
                 </div>
 
-                {/* Right panel — title + meta */}
-                <div className="flex flex-1 items-center justify-between px-6 py-5 gap-4">
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[#0A1628] font-semibold text-base leading-snug mb-1">
+                {/* Right panel — title + summary + tags */}
+                <div className="flex flex-1 flex-col justify-between px-6 py-5 gap-3">
+                  <div>
+                    <p className="text-[#0A1628] font-bold text-base leading-snug mb-1.5">
                       {patent.title}
                     </p>
-                    <p className="text-[#8892A4] text-xs">
-                      Assignee: Surnetics LLC
+                    <p className="text-[#8892A4] text-xs leading-relaxed">
+                      {patent.summary}
                     </p>
                   </div>
-
-                  <div className="flex-shrink-0 flex items-center gap-2">
-                    <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E8F0FF] text-[#0066FF] text-xs font-semibold group-hover:bg-[#0066FF] group-hover:text-white transition-colors">
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <div className="flex flex-wrap gap-1.5">
+                      {patent.relevance.split(" · ").map((tag) => (
+                        <span key={tag} className="px-2 py-0.5 bg-[#E8F0FF] text-[#0066FF] text-[10px] font-semibold rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E8F0FF] text-[#0066FF] text-xs font-semibold group-hover:bg-[#0066FF] group-hover:text-white transition-colors flex-shrink-0">
                       <FileText size={12} />
                       View Patent
                     </span>
-                    <div className="w-8 h-8 rounded-full border border-[#E2E8F0] group-hover:border-[#0066FF] group-hover:bg-[#E8F0FF] flex items-center justify-center transition-colors">
-                      <ArrowRight size={14} className="text-[#8892A4] group-hover:text-[#0066FF] transition-colors" />
-                    </div>
                   </div>
                 </div>
 
@@ -411,6 +421,102 @@ export default function IPPortfolioPage() {
                 <p className="text-[#4A5568] text-sm leading-relaxed pt-1">{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Target Acquirers + Deal Structures */}
+      <SectionWrapper gray>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+          {/* Target Acquirers */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Globe size={20} className="text-[#0066FF]" />
+              <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest">
+                Ideal Partners &amp; Acquirers
+              </p>
+            </div>
+            <h2 className="text-[#0A1628] font-extrabold text-2xl md:text-3xl leading-tight tracking-tight mb-4">
+              Who Should Own This Portfolio
+            </h2>
+            <p className="text-[#8892A4] text-sm leading-relaxed mb-6">
+              The microfluidics diagnostics market is{" "}
+              <strong className="text-[#0A1628]">$12B+ and growing at 20% annually</strong>.
+              The companies below are the primary commercial universe
+              for this technology — each actively developing or acquiring
+              microfluidic and point-of-care diagnostic IP.
+            </p>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { name: "Abbott Laboratories", note: "i-STAT · BinaxNOW POC" },
+                { name: "Thermo Fisher Scientific", note: "Molecular Diagnostics" },
+                { name: "Becton Dickinson", note: "Diagnostics Systems" },
+                { name: "Danaher / Cepheid", note: "Rapid Molecular Testing" },
+                { name: "Bio-Rad Laboratories", note: "Clinical Diagnostics" },
+                { name: "Hologic", note: "Women&rsquo;s Health IVD" },
+                { name: "Qiagen", note: "Sample Prep &amp; Assays" },
+                { name: "Illumina", note: "Genomics Platforms" },
+              ].map((co) => (
+                <div key={co.name} className="bg-white border border-[#E2E8F0] rounded-xl px-4 py-3">
+                  <p className="text-[#0A1628] font-bold text-xs leading-tight mb-0.5">{co.name}</p>
+                  <p className="text-[#8892A4] text-[11px]" dangerouslySetInnerHTML={{ __html: co.note }} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Deal Structures */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Shield size={20} className="text-[#0066FF]" />
+              <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest">
+                Deal Structures Available
+              </p>
+            </div>
+            <h2 className="text-[#0A1628] font-extrabold text-2xl md:text-3xl leading-tight tracking-tight mb-4">
+              How to Acquire or License
+            </h2>
+            <p className="text-[#8892A4] text-sm leading-relaxed mb-6">
+              We are open to multiple deal structures depending on the partner&apos;s needs and strategic objectives.
+            </p>
+            <div className="space-y-3">
+              {[
+                {
+                  label: "Outright Portfolio Sale",
+                  desc: "One-time payment for full ownership transfer of all 5 granted patents and 3 pending applications. Simplest structure for a strategic acquirer.",
+                  highlight: true,
+                },
+                {
+                  label: "Exclusive License",
+                  desc: "Upfront payment plus royalties. You gain exclusive rights to commercialize across agreed fields of use — we retain nominal ownership.",
+                  highlight: false,
+                },
+                {
+                  label: "Field-of-Use License",
+                  desc: "Exclusive rights in one sector (e.g., diagnostics) while we license separately to non-competing markets (e.g., aerospace). Maximizes value for both parties.",
+                  highlight: false,
+                },
+                {
+                  label: "Co-Development Agreement",
+                  desc: "Joint development partnership to extend the technology into your specific product platform — with milestone payments and licensing terms.",
+                  highlight: false,
+                },
+              ].map((deal) => (
+                <div
+                  key={deal.label}
+                  className={`rounded-xl px-5 py-4 border ${deal.highlight ? "bg-[#E8F0FF] border-[#0066FF]/30" : "bg-white border-[#E2E8F0]"}`}
+                >
+                  <div className="flex items-start gap-3">
+                    <CheckCircle size={15} className={`mt-0.5 flex-shrink-0 ${deal.highlight ? "text-[#0066FF]" : "text-green-500"}`} />
+                    <div>
+                      <p className={`font-bold text-sm mb-0.5 ${deal.highlight ? "text-[#0066FF]" : "text-[#0A1628]"}`}>{deal.label}</p>
+                      <p className="text-[#8892A4] text-xs leading-relaxed">{deal.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </SectionWrapper>

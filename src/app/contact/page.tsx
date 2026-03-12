@@ -10,6 +10,7 @@ import { Mail, Phone, Shield, ArrowRight } from "lucide-react";
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIMcOwZTcYqKh4-qJ7I16DZroJAhcZIO3WezTZUKxvOr2NAd6sawnaEwfsIH0bVFhZ/exec";
 
 const inquiryTypes = [
+  "Patent Acquisition / Portfolio Sale",
   "Licensing Inquiry",
   "Development Partnership",
   "Technical Question",
@@ -93,6 +94,10 @@ export default function ContactPage() {
                 </p>
                 {[
                   {
+                    title: "Patent Acquisition",
+                    desc: "Interested in acquiring the full 5-patent portfolio? We welcome direct inquiries from corporate BD and IP teams at life science and diagnostics companies.",
+                  },
+                  {
                     title: "Licensing Inquiry",
                     desc: "Interested in licensing the technology for your product or platform? We will schedule a technical briefing and discuss terms.",
                   },
@@ -117,10 +122,19 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3">
                   <Shield size={16} className="text-[#0066FF] mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-[#0A1628] font-semibold text-xs mb-1">Active Patent Protection</p>
-                    <p className="text-[#8892A4] text-xs leading-relaxed">
-                      US Patent 9,968,930 B2 · Granted 2018 · Active until 2034
+                    <p className="text-[#0A1628] font-semibold text-xs mb-2">Active Patent Portfolio</p>
+                    <p className="text-[#8892A4] text-xs leading-relaxed mb-2">
+                      5 Granted US Patents · 3 Applications in Prosecution
                     </p>
+                    <p className="text-[#8892A4] text-xs leading-relaxed">
+                      Portfolio extends through 2041 · 44 industry citations
+                    </p>
+                    <Link
+                      href="/ip-portfolio/"
+                      className="inline-flex items-center gap-1 text-[#0066FF] text-xs font-semibold mt-2 hover:underline"
+                    >
+                      View full portfolio →
+                    </Link>
                   </div>
                 </div>
               </div>

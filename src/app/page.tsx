@@ -81,10 +81,10 @@ const markets = [
 ];
 
 const stats = [
-  { value: 44, suffix: "", label: "Patent Citations", description: "Subsequent patents cite this work" },
-  { value: 20, suffix: "", label: "Patent Claims", description: "Comprehensive protection scope" },
-  { value: 6, suffix: "", label: "Target Markets", description: "Across five industries" },
-  { value: 2034, suffix: "", label: "Active Until", description: "Long runway for licensing partners" },
+  { value: 5, suffix: "", label: "Granted Patents", description: "Active US patent portfolio" },
+  { value: 44, suffix: "", label: "Patent Citations", description: "Cited by subsequent industry patents" },
+  { value: 6, suffix: "", label: "Target Markets", description: "Across life sciences & industrial" },
+  { value: 2041, suffix: "", label: "Portfolio Extends To", description: "Long runway for licensing partners" },
 ];
 
 export default function HomePage() {
@@ -175,13 +175,13 @@ export default function HomePage() {
       <section className="bg-[#0066FF] py-5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-white text-sm font-semibold">
-            <span>US Patent 9,968,930 B2</span>
+            <span>5 Granted US Patents</span>
             <span className="text-white/40 hidden md:inline">·</span>
-            <span>Active Until 2034</span>
+            <span>Portfolio Active Through 2041</span>
             <span className="text-white/40 hidden md:inline">·</span>
-            <span>Cited by 44 Patents</span>
+            <span>Cited by 44 Industry Patents</span>
             <span className="text-white/40 hidden md:inline">·</span>
-            <span>6 Target Markets</span>
+            <span>$12B+ Market, 20% Annual Growth</span>
             <span className="text-white/40 hidden md:inline">·</span>
             <Link href="/ip-portfolio/" className="underline underline-offset-2 hover:text-white/80">
               View IP Portfolio →
@@ -309,6 +309,71 @@ export default function HomePage() {
                   <p className="text-white/50 text-xs">{s.label}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Target Acquirers ─────────────────────────────────── */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-4">
+                Strategic Fit
+              </p>
+              <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight mb-6">
+                Built for the World&rsquo;s Leading Diagnostics Companies
+              </h2>
+              <p className="text-[#8892A4] text-base leading-relaxed mb-6">
+                This portfolio is directly relevant to any company developing
+                cartridge-based diagnostics, point-of-care devices, or
+                microfluidic sample-handling systems. The companies below
+                represent the primary commercial universe for this technology.
+              </p>
+              <p className="text-[#8892A4] text-base leading-relaxed mb-8">
+                The microfluidics diagnostics market reached{" "}
+                <strong className="text-[#0A1628]">$12B+ in 2023</strong> and
+                is growing at nearly{" "}
+                <strong className="text-[#0A1628]">20% annually</strong> — with
+                US lab-on-a-chip patents among the most actively licensed IP in
+                life sciences.
+              </p>
+              <Link
+                href="/contact/"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded bg-[#0066FF] text-white font-semibold text-sm hover:bg-blue-500 transition-colors duration-200"
+              >
+                Inquire About Acquisition <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            <div>
+              <p className="text-[#8892A4] text-xs font-semibold uppercase tracking-widest mb-5">
+                Primary Acquisition Targets
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { name: "Abbott Laboratories", segment: "IVD & POC Diagnostics" },
+                  { name: "Thermo Fisher Scientific", segment: "Molecular Diagnostics" },
+                  { name: "Becton Dickinson", segment: "Diagnostics Systems" },
+                  { name: "Danaher / Cepheid", segment: "Rapid Molecular Testing" },
+                  { name: "Bio-Rad Laboratories", segment: "Life Science & Clinical" },
+                  { name: "Hologic", segment: "Women&rsquo;s Health Diagnostics" },
+                  { name: "Qiagen", segment: "Sample Prep & Assays" },
+                  { name: "Illumina", segment: "Genomics & Sequencing" },
+                ].map((co) => (
+                  <div
+                    key={co.name}
+                    className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-xl px-4 py-4"
+                  >
+                    <p className="text-[#0A1628] font-bold text-sm leading-tight mb-0.5">{co.name}</p>
+                    <p
+                      className="text-[#8892A4] text-xs"
+                      dangerouslySetInnerHTML={{ __html: co.segment }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
