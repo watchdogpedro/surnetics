@@ -170,50 +170,63 @@ export default function IPPortfolioPage() {
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {grantedPatents.map((patent, i) => (
-            <div
+            <button
               key={patent.number}
-              className="flex flex-col sm:flex-row sm:items-center gap-4 bg-white border border-[#E2E8F0] rounded-xl px-6 py-5"
+              onClick={() => openViewer(patent)}
+              className="w-full text-left group"
             >
-              {/* Index */}
-              <div className="w-8 h-8 rounded-full bg-[#E8F0FF] flex items-center justify-center text-[#0066FF] font-bold text-sm flex-shrink-0">
-                {i + 1}
-              </div>
+              <div className="flex overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-sm hover:shadow-xl hover:border-[#0066FF]/30 transition-all duration-300">
 
-              {/* Patent number — clickable */}
-              <div className="sm:w-48 flex-shrink-0">
-                <button
-                  onClick={() => openViewer(patent)}
-                  className="text-[#0066FF] font-bold text-sm tracking-tight hover:underline underline-offset-2 text-left group flex items-center gap-1"
-                >
-                  {patent.number}
-                  <FileText size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </button>
-              </div>
+                {/* Left panel — patent number */}
+                <div className="relative bg-[#0A1628] px-6 py-6 flex flex-col justify-between min-w-[180px] sm:min-w-[220px] flex-shrink-0 overflow-hidden">
+                  {/* Background number watermark */}
+                  <span className="absolute -right-3 -bottom-4 text-[80px] font-black text-white/5 leading-none select-none pointer-events-none">
+                    {i + 1}
+                  </span>
 
-              {/* Title */}
-              <div className="flex-1">
-                <p className="text-[#4A5568] text-sm leading-relaxed">
-                  {patent.title}
-                </p>
-              </div>
+                  <div>
+                    <p className="text-[#0066FF] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
+                      US Patent
+                    </p>
+                    <p className="text-white font-extrabold text-xl leading-tight tracking-tight group-hover:text-[#4DA3FF] transition-colors">
+                      {patent.number}
+                    </p>
+                  </div>
 
-              {/* Status badge + View button */}
-              <div className="flex items-center gap-3 flex-shrink-0">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-green-50 text-green-600 border border-green-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                  Granted
-                </span>
-                <button
-                  onClick={() => openViewer(patent)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E8F0FF] text-[#0066FF] text-xs font-semibold hover:bg-[#0066FF] hover:text-white transition-colors"
-                >
-                  <FileText size={12} />
-                  View
-                </button>
+                  <div className="mt-4 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                    <span className="text-green-400 text-[10px] font-bold uppercase tracking-widest">
+                      Active · Granted
+                    </span>
+                  </div>
+                </div>
+
+                {/* Right panel — title + meta */}
+                <div className="flex flex-1 items-center justify-between px-6 py-5 gap-4">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[#0A1628] font-semibold text-base leading-snug mb-1">
+                      {patent.title}
+                    </p>
+                    <p className="text-[#8892A4] text-xs">
+                      Assignee: Surnetics LLC
+                    </p>
+                  </div>
+
+                  <div className="flex-shrink-0 flex items-center gap-2">
+                    <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E8F0FF] text-[#0066FF] text-xs font-semibold group-hover:bg-[#0066FF] group-hover:text-white transition-colors">
+                      <FileText size={12} />
+                      View Patent
+                    </span>
+                    <div className="w-8 h-8 rounded-full border border-[#E2E8F0] group-hover:border-[#0066FF] group-hover:bg-[#E8F0FF] flex items-center justify-center transition-colors">
+                      <ArrowRight size={14} className="text-[#8892A4] group-hover:text-[#0066FF] transition-colors" />
+                    </div>
+                  </div>
+                </div>
+
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </SectionWrapper>
@@ -237,49 +250,74 @@ export default function IPPortfolioPage() {
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {pendingApplications.map((app) => (
-            <div
+            <button
               key={app.number}
-              className="flex flex-col sm:flex-row sm:items-center gap-4 bg-[#F5F7FA] border border-[#E2E8F0] rounded-xl px-6 py-5"
+              onClick={() => openViewer(app)}
+              className="w-full text-left group"
             >
-              {/* Icon */}
-              <div className="w-8 h-8 rounded-full bg-[#FFF7E8] flex items-center justify-center flex-shrink-0">
-                <FileText size={14} className="text-[#D97706]" />
-              </div>
+              <div className="flex overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-sm hover:shadow-xl hover:border-[#D97706]/30 transition-all duration-300">
 
-              {/* App number — clickable */}
-              <div className="sm:w-64 flex-shrink-0">
-                <button
-                  onClick={() => openViewer(app)}
-                  className="text-[#0A1628] font-bold text-sm tracking-tight hover:text-[#0066FF] hover:underline underline-offset-2 text-left transition-colors"
-                >
-                  {app.number}
-                </button>
-              </div>
-
-              {/* Title */}
-              <div className="flex-1">
-                <p className="text-[#4A5568] text-sm leading-relaxed">
-                  {app.title}
-                </p>
-              </div>
-
-              {/* Status badge */}
-              <div className="flex-shrink-0">
-                {app.note ? (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-600 border border-blue-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                    {app.note}
+                {/* Left panel */}
+                <div className="relative bg-[#2D1F0A] px-6 py-6 flex flex-col justify-between min-w-[180px] sm:min-w-[220px] flex-shrink-0 overflow-hidden">
+                  {/* Background watermark */}
+                  <span className="absolute -right-2 -bottom-3 text-[80px] font-black text-white/5 leading-none select-none pointer-events-none">
+                    ⚖
                   </span>
-                ) : (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-yellow-50 text-yellow-600 border border-yellow-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                    Pending
-                  </span>
-                )}
+
+                  <div>
+                    <p className="text-[#D97706] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
+                      US Application
+                    </p>
+                    <p className="text-white font-extrabold text-sm leading-tight tracking-tight group-hover:text-[#F6C76A] transition-colors">
+                      {app.number}
+                    </p>
+                  </div>
+
+                  <div className="mt-4 flex items-center gap-1.5">
+                    {app.note ? (
+                      <>
+                        <span className="w-2 h-2 rounded-full bg-blue-400" />
+                        <span className="text-blue-400 text-[10px] font-bold uppercase tracking-widest">
+                          Allowed
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+                        <span className="text-yellow-400 text-[10px] font-bold uppercase tracking-widest">
+                          In Prosecution
+                        </span>
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right panel */}
+                <div className="flex flex-1 items-center justify-between px-6 py-5 gap-4">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[#0A1628] font-semibold text-base leading-snug mb-1">
+                      {app.title}
+                    </p>
+                    <p className="text-[#8892A4] text-xs">
+                      Assignee: Surnetics LLC · Continuation Application
+                    </p>
+                  </div>
+
+                  <div className="flex-shrink-0 flex items-center gap-2">
+                    <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FFF7E8] text-[#D97706] text-xs font-semibold group-hover:bg-[#D97706] group-hover:text-white transition-colors">
+                      <FileText size={12} />
+                      View Filing
+                    </span>
+                    <div className="w-8 h-8 rounded-full border border-[#E2E8F0] group-hover:border-[#D97706] group-hover:bg-[#FFF7E8] flex items-center justify-center transition-colors">
+                      <ArrowRight size={14} className="text-[#8892A4] group-hover:text-[#D97706] transition-colors" />
+                    </div>
+                  </div>
+                </div>
+
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </SectionWrapper>
