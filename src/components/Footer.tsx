@@ -43,11 +43,11 @@ export default function Footer() {
             <div>
               <div className="mb-4">
                 <Image
-                  src="/surnetics-logo-tagline.png"
-                  alt="Surnetics — Patented Microfluidics IP"
-                  width={240}
-                  height={78}
-                  className="h-12 w-auto object-contain brightness-0 invert"
+                  src="/surnetics-logo.png"
+                  alt="Surnetics"
+                  width={140}
+                  height={46}
+                  className="h-9 w-auto object-contain brightness-0 invert"
                 />
               </div>
               <p className="text-white/50 text-sm leading-relaxed max-w-xs">

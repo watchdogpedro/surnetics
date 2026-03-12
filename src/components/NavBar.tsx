@@ -35,12 +35,12 @@ export default function NavBar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-28 md:h-32">
+        <div className="flex items-center justify-between h-24 md:h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/surnetics-logo-tagline.png"
-              alt="Surnetics — Patented Microfluidics IP"
+              src="/surnetics-logo.png"
+              alt="Surnetics"
               width={480}
               height={156}
               className="h-[100px] w-auto object-contain"
