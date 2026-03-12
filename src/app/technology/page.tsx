@@ -94,7 +94,7 @@ export default function TechnologyPage() {
                 pumps, valves, or any external power source.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden max-w-sm mx-auto lg:mx-0">
               <Image
                 src="/microfluidics-chip.png"
                 alt="Microfluidic chip with three input channels converging into a mixing chamber with optical detection zone"
