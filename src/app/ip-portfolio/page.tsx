@@ -1,36 +1,43 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import SectionWrapper from "@/components/SectionWrapper";
+import PatentViewerModal from "@/components/PatentViewerModal";
 import { Shield, Globe, ArrowRight, FileText, CheckCircle, Clock } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "IP Portfolio | Patented Microfluidic Technology",
-  description:
-    "Surnetics holds an active US patent portfolio of 5 granted patents protecting Surface Energy Gradient Coating technology. Portfolio extends through 2041.",
-};
+import { useState } from "react";
 
 const grantedPatents = [
   {
     number: "US 12,263,480",
     title: "Diagnostic Device with Integrated Sampler and Holder",
+    pdfFile: "/patents/US12263480.pdf",
+    googlePatentsUrl: "https://patents.google.com/patent/US12263480B2/en",
   },
   {
     number: "US 12,083,517",
     title: "Microfluidic Products with Controlled Fluid Flow",
+    pdfFile: "/patents/US12083517.pdf",
+    googlePatentsUrl: "https://patents.google.com/patent/US12083517B2/en",
   },
   {
     number: "US 11,583,858",
     title: "Microfluidic Diagnostics with Controlled Fluid Flow",
+    pdfFile: "/patents/US11583858.pdf",
+    googlePatentsUrl: "https://patents.google.com/patent/US11583858B2/en",
   },
   {
     number: "US 10,821,438",
     title: "Microfluidic Diagnostics with Controlled Fluid Flow",
+    pdfFile: "/patents/US10821438.pdf",
+    googlePatentsUrl: "https://patents.google.com/patent/US10821438B2/en",
   },
   {
     number: "US 9,968,930",
     title: "Microfluidic Products with Controlled Fluid Flow",
+    pdfFile: "/patents/US9968930.pdf",
+    googlePatentsUrl: "https://patents.google.com/patent/US9968930B2/en",
   },
 ];
 
@@ -39,16 +46,22 @@ const pendingApplications = [
     number: "US Pat. Appl. 17/114,390",
     title: "Diagnostic Device with Integrated Sampler and Holder",
     note: "Allowed",
+    pdfFile: null,
+    googlePatentsUrl: "https://patents.google.com/patent/US20210205797A1/en",
   },
   {
     number: "US Pat. Appl. 18/826,821",
     title: "Microfluidic Products with Controlled Fluid Flow",
     note: null,
+    pdfFile: null,
+    googlePatentsUrl: "https://patents.google.com/patent/US20250010271A1/en",
   },
   {
     number: "US Patent Appl. 19/051,462",
     title: "Diagnostic Device with Integrated Sampler and Holder",
     note: null,
+    pdfFile: null,
+    googlePatentsUrl: "https://patents.google.com/",
   },
 ];
 
@@ -71,7 +84,30 @@ const additionalIP = [
   "Preferred materials and coating compositions with specific liquids.",
 ];
 
+type ViewerState = {
+  patentNumber: string;
+  title: string;
+  pdfFile: string | null;
+  googlePatentsUrl: string;
+} | null;
+
 export default function IPPortfolioPage() {
+  const [viewer, setViewer] = useState<ViewerState>(null);
+
+  const openViewer = (patent: {
+    number: string;
+    title: string;
+    pdfFile: string | null;
+    googlePatentsUrl: string;
+  }) => {
+    setViewer({
+      patentNumber: patent.number,
+      title: patent.title,
+      pdfFile: patent.pdfFile,
+      googlePatentsUrl: patent.googlePatentsUrl,
+    });
+  };
+
   return (
     <>
       <NavBar />
@@ -130,7 +166,7 @@ export default function IPPortfolioPage() {
           <p className="text-[#8892A4] text-base leading-relaxed">
             All patents are assigned to Surnetics LLC and cover the core methods,
             products, and devices built on Surface Energy Gradient Coating
-            technology.
+            technology. Click any patent number to view the full document.
           </p>
         </div>
 
@@ -145,11 +181,15 @@ export default function IPPortfolioPage() {
                 {i + 1}
               </div>
 
-              {/* Patent number */}
+              {/* Patent number — clickable */}
               <div className="sm:w-48 flex-shrink-0">
-                <p className="text-[#0A1628] font-bold text-sm tracking-tight">
+                <button
+                  onClick={() => openViewer(patent)}
+                  className="text-[#0066FF] font-bold text-sm tracking-tight hover:underline underline-offset-2 text-left group flex items-center gap-1"
+                >
                   {patent.number}
-                </p>
+                  <FileText size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
               </div>
 
               {/* Title */}
@@ -159,12 +199,19 @@ export default function IPPortfolioPage() {
                 </p>
               </div>
 
-              {/* Status badge */}
-              <div className="flex-shrink-0">
+              {/* Status badge + View button */}
+              <div className="flex items-center gap-3 flex-shrink-0">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-green-50 text-green-600 border border-green-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
                   Granted
                 </span>
+                <button
+                  onClick={() => openViewer(patent)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E8F0FF] text-[#0066FF] text-xs font-semibold hover:bg-[#0066FF] hover:text-white transition-colors"
+                >
+                  <FileText size={12} />
+                  View
+                </button>
               </div>
             </div>
           ))}
@@ -201,11 +248,14 @@ export default function IPPortfolioPage() {
                 <FileText size={14} className="text-[#D97706]" />
               </div>
 
-              {/* App number */}
+              {/* App number — clickable */}
               <div className="sm:w-64 flex-shrink-0">
-                <p className="text-[#0A1628] font-bold text-sm tracking-tight">
+                <button
+                  onClick={() => openViewer(app)}
+                  className="text-[#0A1628] font-bold text-sm tracking-tight hover:text-[#0066FF] hover:underline underline-offset-2 text-left transition-colors"
+                >
                   {app.number}
-                </p>
+                </button>
               </div>
 
               {/* Title */}
@@ -360,6 +410,17 @@ export default function IPPortfolioPage() {
       </SectionWrapper>
 
       <Footer />
+
+      {/* Patent Viewer Modal */}
+      {viewer && (
+        <PatentViewerModal
+          patentNumber={viewer.patentNumber}
+          title={viewer.title}
+          pdfFile={viewer.pdfFile}
+          googlePatentsUrl={viewer.googlePatentsUrl}
+          onClose={() => setViewer(null)}
+        />
+      )}
     </>
   );
 }
