@@ -6,15 +6,18 @@ import SectionWrapper from "@/components/SectionWrapper";
 import { FlaskConical, Cpu, Heart, Pill, Battery, Rocket, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Markets | Six Industries. One Platform Technology.",
+  title: "Patent Applications in Diagnostics, Drug Delivery & Biosensing | Surnetics",
   description:
-    "Surnetics Surface Energy Gradient Coating technology addresses fluid management challenges across IVD diagnostics, electronics cooling, implantable devices, drug delivery, energy storage, and aerospace.",
+    "Surnetics microfluidics patent portfolio addresses fluid management across IVD diagnostics, point-of-care testing, molecular diagnostics, drug delivery, lab automation, and wearable biosensors. Available for licensing or acquisition.",
   keywords: [
-    "microfluidic technology markets",
-    "pump-free microfluidics applications",
-    "passive fluid control industries",
-    "microfluidic IP licensing",
-    "surface energy gradient applications",
+    "microfluidics patent applications diagnostics",
+    "lab-on-a-chip patent licensing",
+    "point-of-care diagnostics IP",
+    "molecular diagnostics patent",
+    "drug delivery microfluidics patent",
+    "biosensor patent licensing",
+    "clinical lab automation IP",
+    "wearable biosensor patent",
   ],
 };
 

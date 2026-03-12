@@ -18,9 +18,18 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Surnetics | The Only Patented Platform That Moves Liquids Without Pumps",
+  title: "Surnetics | Microfluidics & Lab-on-a-Chip Patents for Sale or License",
   description:
-    "Surnetics holds patented Surface Energy Gradient Coating technology — the only platform that moves liquids through microfluidic channels without pumps, valves, or controllers. Licensed across six industries.",
+    "Surnetics holds a portfolio of 5 granted microfluidics patents covering lab-on-a-chip devices, point-of-care diagnostics, biosensors, and sample preparation systems. Available for outright sale, exclusive license, or field-of-use licensing to IVD manufacturers and medical device companies.",
+  keywords: [
+    "microfluidics patents for sale",
+    "lab-on-a-chip patent licensing",
+    "point-of-care diagnostics IP",
+    "microfluidic chip patent portfolio",
+    "IVD patent licensing",
+    "biosensor patent for sale",
+    "molecular diagnostics patent",
+  ],
 };
 
 const valueProps = [
@@ -115,13 +124,14 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-white font-extrabold text-4xl md:text-5xl xl:text-6xl leading-[1.08] tracking-tight mb-6 animate-fade-up delay-100">
-                Eliminate the Instrument.{" "}
-                <span className="text-[#0066FF]">Own the Market.</span>
+                Microfluidics Patent Portfolio{" "}
+                <span className="text-[#0066FF]">Available for Sale or Licensing.</span>
               </h1>
 
               <p className="text-white text-lg md:text-xl leading-relaxed mb-10 max-w-lg animate-fade-up delay-200">
-                The only passive fluid technology that enables true lab-on-a-chip
-                diagnostics — no pumps, no readers, no barriers to adoption.
+                Life science IP covering lab-on-a-chip devices, point-of-care diagnostics,
+                microfluidic biosensors, and sample preparation systems — available for
+                acquisition or exclusive licensing by medical device and diagnostics companies.
               </p>
 
               <div className="flex flex-wrap gap-4 animate-fade-up delay-300">

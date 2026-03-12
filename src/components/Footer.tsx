@@ -4,6 +4,7 @@ import Image from "next/image";
 const footerLinks = [
   { href: "/technology/", label: "Technology" },
   { href: "/ip-portfolio/", label: "IP Portfolio" },
+  { href: "/applications/", label: "Applications" },
   { href: "/markets/", label: "Markets" },
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" },
@@ -20,8 +21,9 @@ export default function Footer() {
               Explore Licensing Opportunities
             </h2>
             <p className="text-white/60 text-base mb-8 max-w-lg">
-              Surnetics technology is available for licensing, co-development, and
-              strategic partnership. Patent protection active through 2034.
+              A portfolio of 5 granted US patents in microfluidics — available for
+              outright sale, exclusive license, or field-of-use licensing. Patent
+              protection active through 2041.
             </p>
             <Link
               href="/contact/"
@@ -76,27 +78,37 @@ export default function Footer() {
             {/* IP Info */}
             <div>
               <h3 className="text-white/40 text-xs font-semibold uppercase tracking-widest mb-4">
-                Intellectual Property
+                Patent Portfolio
               </h3>
-              <p className="text-white/60 text-sm mb-2">
-                US Patent No. 9,968,930 B2
-              </p>
+              <ul className="space-y-1 text-white/50 text-xs leading-relaxed mb-4">
+                <li>US 12,263,480 · US 12,083,517 · US 11,583,858</li>
+                <li>US 10,821,438 · US 9,968,930</li>
+              </ul>
               <p className="text-white/40 text-xs leading-relaxed">
-                &ldquo;Microfluidic Products with Controlled Fluid Flow&rdquo;
+                Microfluidics &amp; Lab-on-a-Chip IP
                 <br />
-                Granted May 15, 2018 · Active until 2034
+                Available for Sale or License · Active through 2041
               </p>
             </div>
           </div>
 
-          {/* Bottom bar */}
-          <div className="border-t border-white/10 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <p className="text-white/30 text-xs">
-              &copy; {new Date().getFullYear()} Surnetics LLC. All rights reserved.
+          {/* Keyword text for SEO */}
+          <div className="border-t border-white/10 mt-10 pt-8">
+            <p className="text-white/20 text-xs leading-relaxed mb-3">
+              Surnetics | Microfluidics Patent Portfolio · Patents available for sale, exclusive license, or non-exclusive license.
+              Applications: Point-of-Care Diagnostics · Molecular Diagnostics · Lab-on-a-Chip · Biosensors · Drug Delivery · Clinical Laboratory Automation · Wearable Devices
             </p>
-            <p className="text-white/20 text-xs">
-              US Patent 9,968,930 B2 · surnetics.com
+            <p className="text-white/15 text-xs leading-relaxed mb-6">
+              Relevant industry buyers: Abbott · Thermo Fisher Scientific · Danaher · Bio-Rad Laboratories · Becton Dickinson · Hologic · Qiagen · Agilent Technologies · Siemens Healthineers · Roche Diagnostics · bioMérieux · 10x Genomics · Illumina
             </p>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <p className="text-white/30 text-xs">
+                &copy; {new Date().getFullYear()} Surnetics LLC. All rights reserved.
+              </p>
+              <p className="text-white/20 text-xs">
+                5 Granted US Patents · surnetics.com
+              </p>
+            </div>
           </div>
         </div>
       </div>

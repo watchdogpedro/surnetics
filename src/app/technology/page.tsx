@@ -7,9 +7,9 @@ import Image from "next/image";
 import { CheckCircle2, ArrowRight, FlaskConical, Layers, Zap, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Technology | Surface Energy Gradient Coating",
+  title: "Technology | Surface Energy Gradient Coating & Pump-Free Microfluidics",
   description:
-    "How Surnetics Surface Energy Gradient Coatings self-propel liquids through microfluidic channels without pumps, valves, or controllers. Technical capabilities, compatible materials, and process overview.",
+    "Surnetics patented Surface Energy Gradient Coatings self-propel liquids through microfluidic channels without pumps, valves, or external power. Core technology behind our lab-on-a-chip and point-of-care diagnostics patent portfolio.",
 };
 
 const materials = [

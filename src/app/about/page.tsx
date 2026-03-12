@@ -7,9 +7,9 @@ import TeamCard from "@/components/TeamCard";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About | Team & Company",
+  title: "About Surnetics | Microfluidics IP & Life Science Patent Inventor",
   description:
-    "Surnetics LLC — inventors and commercializers of patented Surface Energy Gradient Coating technology. Meet the team: Brian Babcock (inventor) and Paul Denman.",
+    "Surnetics LLC holds a portfolio of 5 granted US microfluidics patents available for sale or licensing. Meet the team: Brian Babcock (registered patent agent, inventor) and Paul Denman (business development).",
 };
 
 const team = [
@@ -19,7 +19,7 @@ const team = [
     title: "Inventor & President",
     bio: "Brian invented all of Surnetics' Surface Energy Gradient Coating technology and is the lead inventor on the core US patent. As a Registered US Patent Agent with deep experience in IP strategy and commercial valuation, he oversees the company's technical development and patent portfolio.",
     credentials: [
-      "Inventor, US Patent 9,968,930 B2",
+      "Lead Inventor, 5 Granted US Patents (9,968,930 · 10,821,438 · 11,583,858 · 12,083,517 · 12,263,480)",
       "Registered US Patent Agent",
       "Former IP Manager, Donaldson Company",
       "B.S. & M.S. Chemical Engineering, Vanderbilt University",
@@ -110,8 +110,8 @@ export default function AboutPage() {
           {/* Stats */}
           <div className="grid grid-cols-2 gap-4">
             {[
-              { label: "Core Patent", value: "US 9,968,930 B2" },
-              { label: "Protection Horizon", value: "2034" },
+              { label: "Granted US Patents", value: "5" },
+              { label: "Protection Through", value: "2041" },
               { label: "Patent Citations", value: "44" },
               { label: "Target Markets", value: "6" },
             ].map((s) => (
