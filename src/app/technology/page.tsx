@@ -78,20 +78,32 @@ export default function TechnologyPage() {
       <NavBar />
 
       {/* Page Header */}
-      <section className="bg-[#0A1628] pt-32 pb-20">
+      <section className="bg-[#0A1628] pt-32 pb-20 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-4">
-              Core Technology
-            </p>
-            <h1 className="text-white font-extrabold text-4xl md:text-5xl leading-tight tracking-tight mb-6">
-              Surface Energy Gradient Coatings
-            </h1>
-            <p className="text-white/60 text-lg leading-relaxed">
-              A patented platform technology that generates a net capillary force
-              inside microfluidic channels — moving liquids passively without
-              pumps, valves, or any external power source.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-4">
+                Core Technology
+              </p>
+              <h1 className="text-white font-extrabold text-4xl md:text-5xl leading-tight tracking-tight mb-6">
+                Surface Energy Gradient Coatings
+              </h1>
+              <p className="text-white/60 text-lg leading-relaxed">
+                A patented platform technology that generates a net capillary force
+                inside microfluidic channels — moving liquids passively without
+                pumps, valves, or any external power source.
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden">
+              <Image
+                src="/microfluidics-chip.png"
+                alt="Microfluidic chip with three input channels converging into a mixing chamber with optical detection zone"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -132,15 +144,52 @@ export default function TechnologyPage() {
             </div>
           </div>
 
-          {/* Microfluidic chip image */}
-          <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <Image
-              src="/microfluidics-chip.png"
-              alt="Microfluidic chip with three input channels converging into a mixing chamber, output channel leading to an optical detection zone with electronic readout"
-              width={1200}
-              height={800}
-              className="w-full h-auto"
-            />
+          {/* Channel diagram */}
+          <div className="bg-[#F5F7FA] rounded-2xl p-8">
+            <p className="text-[#8892A4] text-xs font-semibold uppercase tracking-widest text-center mb-6">
+              Gradient Channel Cross-Section
+            </p>
+            <svg viewBox="0 0 400 200" className="w-full h-auto" aria-label="Surface energy gradient channel diagram">
+              <defs>
+                <linearGradient id="techWallGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#0066FF" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#B3D4FF" stopOpacity="0.4" />
+                </linearGradient>
+                <linearGradient id="techFluid" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#0066FF" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.6" />
+                </linearGradient>
+              </defs>
+
+              {/* Top wall */}
+              <rect x="40" y="60" width="320" height="14" fill="url(#techWallGrad)" rx="2" />
+
+              {/* Channel */}
+              <rect x="40" y="74" width="320" height="52" fill="#E8F0FF" rx="0" />
+
+              {/* Fluid */}
+              <rect x="40" y="76" width="160" height="48" fill="url(#techFluid)" rx="2" />
+
+              {/* Bottom wall */}
+              <rect x="40" y="126" width="320" height="14" fill="url(#techWallGrad)" rx="2" />
+
+              {/* Arrows showing force direction */}
+              <defs>
+                <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="3" refY="2" orient="auto">
+                  <polygon points="0 0, 6 2, 0 4" fill="#0066FF" />
+                </marker>
+              </defs>
+              <line x1="190" y1="100" x2="310" y2="100" stroke="#0066FF" strokeWidth="2" markerEnd="url(#arrowhead)" />
+
+              {/* Labels */}
+              <text x="40" y="52" fill="#0066FF" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="700" letterSpacing="0.04em">HIGH ENERGY</text>
+              <text x="360" y="52" fill="#8892A4" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="700" textAnchor="end" letterSpacing="0.04em">LOW ENERGY</text>
+
+              <text x="245" y="95" fill="#ffffff" fontSize="8" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle">Capillary Force →</text>
+
+              <text x="200" y="160" fill="#0A1628" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle">Gradient Coating on Channel Wall</text>
+              <text x="200" y="173" fill="#8892A4" fontSize="8" fontFamily="Inter, sans-serif" textAnchor="middle">Self-propelled — no pump required</text>
+            </svg>
           </div>
         </div>
       </SectionWrapper>
