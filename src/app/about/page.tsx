@@ -147,36 +147,6 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* Timeline */}
-      <SectionWrapper>
-        <div className="max-w-2xl mb-12">
-          <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-3">
-            Company History
-          </p>
-          <h2 className="text-[#0A1628] font-extrabold text-3xl md:text-4xl leading-tight tracking-tight">
-            Key Milestones
-          </h2>
-        </div>
-
-        <div className="relative max-w-3xl">
-          <div className="absolute left-16 top-0 bottom-0 w-px bg-[#E2E8F0]" />
-          <div className="space-y-6">
-            {milestones.map((m, i) => (
-              <div key={i} className="relative pl-24">
-                <span className="absolute left-0 top-3 text-[#0066FF] font-bold text-xs w-14 text-right">
-                  {m.year}
-                </span>
-                <div className="absolute left-[61px] top-4 w-3 h-3 rounded-full bg-[#0066FF] border-2 border-white shadow-sm" />
-                <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-xl p-5">
-                  <h3 className="text-[#0A1628] font-bold text-sm mb-1.5">{m.event}</h3>
-                  <p className="text-[#8892A4] text-xs leading-relaxed">{m.detail}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
-
       {/* CTA */}
       <SectionWrapper dark>
         <div className="text-center max-w-xl mx-auto">

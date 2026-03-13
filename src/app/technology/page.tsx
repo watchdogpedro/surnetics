@@ -182,8 +182,8 @@ export default function TechnologyPage() {
               <line x1="190" y1="100" x2="310" y2="100" stroke="#0066FF" strokeWidth="2" markerEnd="url(#arrowhead)" />
 
               {/* Labels */}
-              <text x="40" y="52" fill="#0066FF" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="700" letterSpacing="0.04em">HIGH ENERGY</text>
-              <text x="360" y="52" fill="#8892A4" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="700" textAnchor="end" letterSpacing="0.04em">LOW ENERGY</text>
+              <text x="40" y="52" fill="#8892A4" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="700" letterSpacing="0.04em">LOW ENERGY</text>
+              <text x="360" y="52" fill="#0066FF" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="700" textAnchor="end" letterSpacing="0.04em">HIGH ENERGY</text>
 
               <text x="245" y="95" fill="#ffffff" fontSize="8" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle">Capillary Force →</text>
 
@@ -206,7 +206,7 @@ export default function TechnologyPage() {
           <p className="text-[#8892A4] text-base leading-relaxed">
             Surface Energy Gradient Coating technology is protected by an active US
             patent portfolio. No other company can commercialize this approach.
-            Partners gain exclusive access to a patented platform with a 2034
+            Partners gain exclusive access to a patented platform with a 2041
             protection horizon.
           </p>
         </div>

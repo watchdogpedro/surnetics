@@ -137,19 +137,19 @@ export default function HeroAnimation() {
           fontWeight="600"
           letterSpacing="0.05em"
         >
-          HIGH SURFACE ENERGY
+          LOW SURFACE ENERGY
         </text>
         <text
           x={channelRight}
           y={channelTop - 22}
-          fill="#8892A4"
+          fill="#0066FF"
           fontSize="10"
           fontFamily="Inter, sans-serif"
           fontWeight="600"
           textAnchor="end"
           letterSpacing="0.05em"
         >
-          LOW SURFACE ENERGY
+          HIGH SURFACE ENERGY
         </text>
 
         {/* No pump label */}

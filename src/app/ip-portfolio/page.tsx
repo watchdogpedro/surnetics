@@ -53,25 +53,25 @@ const grantedPatents = [
 
 const pendingApplications = [
   {
-    number: "US Pat. Appl. 17/114,390",
+    number: "US 20210170405",
     title: "Diagnostic Device with Integrated Sampler and Holder",
     note: "Allowed",
     pdfFile: null,
-    googlePatentsUrl: "https://patents.google.com/patent/US20210205797A1/en",
+    googlePatentsUrl: "https://patents.google.com/patent/US20210170405A1/en",
   },
   {
-    number: "US Pat. Appl. 18/826,821",
+    number: "US 20240428117",
     title: "Microfluidic Products with Controlled Fluid Flow",
     note: null,
     pdfFile: null,
-    googlePatentsUrl: "https://patents.google.com/patent/US20250010271A1/en",
+    googlePatentsUrl: "https://patents.google.com/patent/US20240428117A1/en",
   },
   {
-    number: "US Patent Appl. 19/051,462",
+    number: "US 20250177980",
     title: "Diagnostic Device with Integrated Sampler and Holder",
     note: null,
     pdfFile: null,
-    googlePatentsUrl: "https://patents.google.com/",
+    googlePatentsUrl: "https://patents.google.com/patent/US20250177980A1/en",
   },
 ];
 

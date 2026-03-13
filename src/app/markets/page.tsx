@@ -127,22 +127,6 @@ export default function MarketsPage() {
         </div>
       </SectionWrapper>
 
-      {/* Patent Bar */}
-      <section className="bg-[#0066FF] py-5">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-white text-sm font-semibold">
-            <span>US Patent 9,968,930 B2</span>
-            <span className="text-white/40 hidden md:inline">·</span>
-            <span>Active Until 2034</span>
-            <span className="text-white/40 hidden md:inline">·</span>
-            <span>Cited by 44 Patents</span>
-            <span className="text-white/40 hidden md:inline">·</span>
-            <Link href="/ip-portfolio/" className="underline underline-offset-2 hover:text-white/80">
-              View IP Portfolio →
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Bottom CTA */}
       <SectionWrapper dark>

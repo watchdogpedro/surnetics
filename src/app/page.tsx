@@ -116,13 +116,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Text */}
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#0066FF]/30 bg-[#0066FF]/10 mb-8 animate-fade-up">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
-                <span className="text-[#60A5FA] text-xs font-semibold uppercase tracking-widest">
-                  US Patent 9,968,930 B2 · Active
-                </span>
-              </div>
-
               <h1 className="text-white font-extrabold text-4xl md:text-5xl xl:text-6xl leading-[1.08] tracking-tight mb-6 animate-fade-up delay-100">
                 Microfluidics Patent Portfolio{" "}
                 <span className="text-[#0066FF]">Available for Sale or Licensing.</span>
@@ -397,7 +390,7 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
-              { initials: "BB", name: "Brian Babcock", role: "Inventor & President", credential: "Registered US Patent Agent · Vanderbilt B.S./M.S. ChemE · Argonne National Laboratory" },
+              { initials: "BB", name: "Brian Babcock", role: "Inventor & President", credential: "Microfluidics and Coatings Expert — Registered US Patent Agent · Vanderbilt B.S./M.S. ChemE" },
               { initials: "PD", name: "Paul Denman", role: "Co-Founder & Business Dev", credential: "20+ yrs life sciences, medical device, semiconductor, defense" },
             ].map((m) => (
               <div key={m.name} className="text-center">
