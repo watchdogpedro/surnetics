@@ -18,17 +18,21 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Surnetics | Microfluidics & Lab-on-a-Chip Patents for Sale or License",
+  title: "Microfluidics Patents for Sale — Surnetics IP Portfolio",
   description:
     "Surnetics holds a portfolio of 5 granted microfluidics patents covering lab-on-a-chip devices, point-of-care diagnostics, biosensors, and sample preparation systems. Available for outright sale, exclusive license, or field-of-use licensing to IVD manufacturers and medical device companies.",
   keywords: [
     "microfluidics patents for sale",
     "lab-on-a-chip patent licensing",
+    "lab-on-a-chip IP acquisition",
     "point-of-care diagnostics IP",
     "microfluidic chip patent portfolio",
     "IVD patent licensing",
     "biosensor patent for sale",
     "molecular diagnostics patent",
+    "passive microfluidic flow IP",
+    "lateral flow assay patent portfolio",
+    "point-of-care diagnostics patent license",
   ],
 };
 
@@ -90,10 +94,10 @@ const markets = [
 ];
 
 const stats = [
-  { value: 5, suffix: "", label: "Granted Patents", description: "Active US patent portfolio" },
-  { value: 44, suffix: "", label: "Patent Citations", description: "Cited by subsequent industry patents" },
-  { value: 6, suffix: "", label: "Target Markets", description: "Across life sciences & industrial" },
-  { value: 2041, suffix: "", label: "Portfolio Extends To", description: "Long runway for licensing partners" },
+  { value: 44, suffix: "", label: "Patents Citing This Work", description: "Cited by subsequent industry patents" },
+  { value: 5, suffix: "", label: "Granted US Patents", description: "Active US patent portfolio" },
+  { value: 2041, suffix: "", label: "Portfolio Active Through", description: "Long runway for licensing partners" },
+  { value: 2014, suffix: "", label: "Validated With Industry Since", description: "Tested with diagnostic companies" },
 ];
 
 export default function HomePage() {
@@ -117,14 +121,13 @@ export default function HomePage() {
             {/* Text */}
             <div>
               <h1 className="text-white font-extrabold text-4xl md:text-5xl xl:text-6xl leading-[1.08] tracking-tight mb-6 animate-fade-up delay-100">
-                Microfluidics Patent Portfolio{" "}
-                <span className="text-[#0066FF]">Available for Sale or Licensing.</span>
+                The Only Passive Microfluidic Flow Technology{" "}
+                <span className="text-[#0066FF]">Available for Acquisition or License.</span>
               </h1>
 
               <p className="text-white text-lg md:text-xl leading-relaxed mb-10 max-w-lg animate-fade-up delay-200">
-                Life science IP covering lab-on-a-chip devices, point-of-care diagnostics,
-                microfluidic biosensors, and sample preparation systems — available for
-                acquisition or exclusive licensing by medical device and diagnostics companies.
+                5 granted US patents. 44 industry citations. Active through 2041.
+                Validated with diagnostic companies since 2014.
               </p>
 
               <div className="flex flex-wrap gap-4 animate-fade-up delay-300">
@@ -135,8 +138,14 @@ export default function HomePage() {
                   Explore Licensing <ArrowRight size={16} />
                 </Link>
                 <Link
-                  href="/technology/"
+                  href="/contact/?ref=summary"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded border border-white/20 text-white font-semibold text-sm hover:border-white/50 hover:bg-white/5 transition-colors duration-200"
+                >
+                  Download Patent Summary
+                </Link>
+                <Link
+                  href="/technology/"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded border border-white/10 text-white/70 font-semibold text-sm hover:border-white/30 hover:text-white transition-colors duration-200"
                 >
                   View Technology
                 </Link>
@@ -178,11 +187,13 @@ export default function HomePage() {
       <section className="bg-[#0066FF] py-5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-white text-sm font-semibold">
+            <span>Cited by 44 Industry Patents</span>
+            <span className="text-white/40 hidden md:inline">·</span>
             <span>5 Granted US Patents</span>
             <span className="text-white/40 hidden md:inline">·</span>
             <span>Portfolio Active Through 2041</span>
             <span className="text-white/40 hidden md:inline">·</span>
-            <span>Cited by 44 Industry Patents</span>
+            <span>Validated With Industry Since 2014</span>
             <span className="text-white/40 hidden md:inline">·</span>
             <span>$12B+ Market, 20% Annual Growth</span>
             <span className="text-white/40 hidden md:inline">·</span>

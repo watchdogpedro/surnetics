@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/ip-portfolio/", label: "IP Portfolio" },
   { href: "/applications/", label: "Applications" },
   { href: "/markets/", label: "Markets" },
+  { href: "/news/", label: "News" },
   { href: "/about/", label: "About" },
 ];
 

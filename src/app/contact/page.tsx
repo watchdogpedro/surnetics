@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { Mail, Phone, Shield, ArrowRight } from "lucide-react";
+import { Mail, Linkedin, Shield, ArrowRight, Clock } from "lucide-react";
 
 // Paste your Google Apps Script Web App URL here after setup (see README)
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIMcOwZTcYqKh4-qJ7I16DZroJAhcZIO3WezTZUKxvOr2NAd6sawnaEwfsIH0bVFhZ/exec";
@@ -13,20 +14,34 @@ const inquiryTypes = [
   "Patent Acquisition / Portfolio Sale",
   "Licensing Inquiry",
   "Development Partnership",
+  "Patent Summary Request",
   "Technical Question",
   "General Inquiry",
 ];
 
-export default function ContactPage() {
+function ContactPageContent() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const searchParams = useSearchParams();
+  const isSummaryRequest = searchParams.get("ref") === "summary";
+
   const [form, setForm] = useState({
     name: "",
     company: "",
     email: "",
     phone: "",
-    inquiryType: "",
-    message: "",
+    inquiryType: isSummaryRequest ? "Patent Summary Request" : "",
+    message: isSummaryRequest ? "Please send me the one-page patent summary." : "",
   });
+
+  useEffect(() => {
+    if (isSummaryRequest) {
+      setForm((f) => ({
+        ...f,
+        inquiryType: "Patent Summary Request",
+        message: "Please send me the one-page patent summary.",
+      }));
+    }
+  }, [isSummaryRequest]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -88,6 +103,47 @@ export default function ContactPage() {
 
             {/* Sidebar */}
             <div className="space-y-6">
+
+              {/* Direct Contact */}
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 space-y-4">
+                <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest">Direct Contact</p>
+                <div className="space-y-3">
+                  <a href="mailto:info@surnetics.com" className="flex items-center gap-3 group">
+                    <div className="w-8 h-8 rounded-lg bg-[#E8F0FF] flex items-center justify-center flex-shrink-0">
+                      <Mail size={14} className="text-[#0066FF]" />
+                    </div>
+                    <div>
+                      <p className="text-[#0A1628] font-semibold text-xs">Email</p>
+                      <p className="text-[#0066FF] text-xs group-hover:underline">info@surnetics.com</p>
+                    </div>
+                  </a>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-[#E8F0FF] flex items-center justify-center flex-shrink-0">
+                      <Linkedin size={14} className="text-[#0066FF]" />
+                    </div>
+                    <div>
+                      <p className="text-[#0A1628] font-semibold text-xs">LinkedIn</p>
+                      <div className="flex gap-3">
+                        <a href="https://www.linkedin.com/in/brian-babcock-surnetics" target="_blank" rel="noopener noreferrer" className="text-[#0066FF] text-xs hover:underline">Brian Babcock</a>
+                        <span className="text-[#8892A4] text-xs">·</span>
+                        <a href="https://www.linkedin.com/in/pauldenman" target="_blank" rel="noopener noreferrer" className="text-[#0066FF] text-xs hover:underline">Paul Denman</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Response Time & NDA */}
+              <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-xl p-5">
+                <div className="flex items-start gap-3 mb-3">
+                  <Clock size={15} className="text-[#0066FF] mt-0.5 flex-shrink-0" />
+                  <p className="text-[#0A1628] font-semibold text-xs">Response &amp; NDA Process</p>
+                </div>
+                <p className="text-[#8892A4] text-xs leading-relaxed">
+                  We respond to all qualified inquiries within 2 business days. NDA required for full portfolio details, confidential information memorandum, and pricing.
+                </p>
+              </div>
+
               <div>
                 <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-4">
                   How We Engage
@@ -142,6 +198,14 @@ export default function ContactPage() {
 
             {/* Form */}
             <div className="lg:col-span-2">
+              {isSummaryRequest && (
+                <div className="mb-6 bg-[#E8F0FF] border border-[#0066FF]/20 rounded-xl px-5 py-4">
+                  <p className="text-[#0066FF] font-semibold text-sm mb-1">Requesting One-Page Patent Summary</p>
+                  <p className="text-[#4A5568] text-xs leading-relaxed">
+                    Fill out your details below and we will email you the non-confidential one-page patent summary within 1 business day. No NDA required for the summary.
+                  </p>
+                </div>
+              )}
               <div className="bg-white border border-[#E2E8F0] rounded-2xl p-7 md:p-10 shadow-sm">
                 {status === "success" ? (
                   <div className="text-center py-12">
@@ -269,5 +333,13 @@ export default function ContactPage() {
 
       <Footer />
     </>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={null}>
+      <ContactPageContent />
+    </Suspense>
   );
 }

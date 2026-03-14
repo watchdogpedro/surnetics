@@ -6,7 +6,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import { FlaskConical, Cpu, Heart, Pill, Battery, Rocket, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Patent Applications in Diagnostics, Drug Delivery & Biosensing | Surnetics",
+  title: "Microfluidics Applications: IVD, POC, Drug Delivery — Surnetics",
   description:
     "Surnetics microfluidics patent portfolio addresses fluid management across IVD diagnostics, point-of-care testing, molecular diagnostics, drug delivery, lab automation, and wearable biosensors. Available for licensing or acquisition.",
   keywords: [

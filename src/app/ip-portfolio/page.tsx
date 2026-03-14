@@ -340,13 +340,31 @@ export default function IPPortfolioPage() {
               <h2 className="text-white font-extrabold text-2xl md:text-3xl leading-tight tracking-tight mb-3">
                 Cited by 44 Patents Across the Industry
               </h2>
-              <p className="text-white/80 text-base leading-relaxed">
+              <p className="text-white/80 text-base leading-relaxed mb-6">
                 When 44 subsequent patents from major industry players cite this
                 work, it is evidence of broad technological relevance — validation
                 that this is foundational IP, not a niche filing. This citation
                 record demonstrates the core science underpins a wide range of
                 downstream applications and commercial interests.
               </p>
+              <div className="bg-white/10 rounded-xl px-5 py-4 border border-white/20">
+                <p className="text-white font-semibold text-sm mb-3">Who Is Citing This Work</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {[
+                    { type: "IVD & Diagnostics Manufacturers", detail: "Publicly traded medical device companies developing cartridge-based diagnostic systems" },
+                    { type: "Academic & Research Institutions", detail: "University laboratories and national research centers advancing microfluidic science" },
+                    { type: "Medical Device Companies", detail: "Instrument manufacturers and diagnostic platform developers across POC and lab settings" },
+                  ].map((item) => (
+                    <div key={item.type} className="bg-white/10 rounded-lg px-4 py-3">
+                      <p className="text-white font-semibold text-xs mb-1">{item.type}</p>
+                      <p className="text-white/70 text-xs leading-relaxed">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-white/60 text-xs mt-3 italic">
+                  Full list of citing patents and assignees available for review under NDA.
+                </p>
+              </div>
             </div>
             <div className="text-center md:text-right">
               <p className="text-white font-extrabold text-6xl md:text-7xl tracking-tight">44</p>
@@ -480,7 +498,7 @@ export default function IPPortfolioPage() {
             <p className="text-[#8892A4] text-sm leading-relaxed mb-6">
               We are open to multiple deal structures depending on the partner&apos;s needs and strategic objectives.
             </p>
-            <div className="space-y-3">
+            <div className="space-y-3 mb-8">
               {[
                 {
                   label: "Outright Portfolio Sale",
@@ -516,6 +534,25 @@ export default function IPPortfolioPage() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Valuation & Pricing */}
+            <div className="bg-[#0A1628] rounded-xl px-6 py-6 border border-white/5">
+              <p className="text-[#0066FF] text-xs font-semibold uppercase tracking-widest mb-2">Valuation &amp; Pricing</p>
+              <p className="text-white font-bold text-base mb-2">Pricing Available to Qualified Parties</p>
+              <p className="text-white/60 text-sm leading-relaxed mb-4">
+                Portfolio valuation and pricing details are available to qualified parties following NDA execution.
+                To receive our confidential information memorandum, please{" "}
+                <Link href="/contact/" className="text-[#0066FF] hover:underline">contact us</Link>{" "}
+                or email us directly at{" "}
+                <a href="mailto:info@surnetics.com" className="text-[#0066FF] hover:underline">info@surnetics.com</a>.
+              </p>
+              <Link
+                href="/contact/?ref=summary"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-[#0066FF] text-white font-semibold text-xs hover:bg-blue-500 transition-colors duration-200"
+              >
+                Request One-Page Summary <ArrowRight size={13} />
+              </Link>
             </div>
           </div>
         </div>
