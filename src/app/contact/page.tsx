@@ -124,9 +124,9 @@ function ContactPageContent() {
                     <div>
                       <p className="text-[#0A1628] font-semibold text-xs">LinkedIn</p>
                       <div className="flex gap-3">
-                        <a href="https://www.linkedin.com/in/brian-babcock-surnetics" target="_blank" rel="noopener noreferrer" className="text-[#0066FF] text-xs hover:underline">Brian Babcock</a>
+                        <a href="https://www.linkedin.com/in/brian-babcock-8bb42b10/" target="_blank" rel="noopener noreferrer" className="text-[#0066FF] text-xs hover:underline">Brian Babcock</a>
                         <span className="text-[#8892A4] text-xs">·</span>
-                        <a href="https://www.linkedin.com/in/pauldenman" target="_blank" rel="noopener noreferrer" className="text-[#0066FF] text-xs hover:underline">Paul Denman</a>
+                        <a href="https://www.linkedin.com/in/pauldenman1/" target="_blank" rel="noopener noreferrer" className="text-[#0066FF] text-xs hover:underline">Paul Denman</a>
                       </div>
                     </div>
                   </div>
