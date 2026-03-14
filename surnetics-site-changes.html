@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Surnetics Website Update — March 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0A1628;
+    --blue: #0066FF;
+    --blue-light: #E8F0FF;
+    --slate: #8892A4;
+    --off-white: #F8F9FC;
+    --white: #FFFFFF;
+    --rule: #E2E8F0;
+    --gold: #C9A84C;
+    --gold-light: #F5EDD4;
+  }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+
+  /* ── COVER ─────────────────────────────────────────────── */
+  .cover {
+    page-break-after: always;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-accent {
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(135deg, #0066FF08 0%, #0066FF18 100%);
+    border-left: 1px solid rgba(0,102,255,0.15);
+  }
+
+  .cover-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,102,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,102,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .cover-corner-tl {
+    position: absolute;
+    top: 48px; left: 48px;
+    width: 60px; height: 60px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+    opacity: 0.6;
+  }
+  .cover-corner-br {
+    position: absolute;
+    bottom: 48px; right: 48px;
+    width: 60px; height: 60px;
+    border-bottom: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+    opacity: 0.6;
+  }
+
+  .cover-top {
+    position: relative;
+    z-index: 1;
+    padding: 56px 64px 0;
+  }
+
+  .cover-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .cover-logo-mark {
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cover-logo-mark svg { width: 18px; height: 18px; }
+
+  .cover-company {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.04em;
+  }
+
+  .cover-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 32px 0 0;
+    opacity: 0.7;
+  }
+
+  .cover-body {
+    position: relative;
+    z-index: 1;
+    padding: 0 64px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cover-eyebrow {
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 38pt;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+
+  .cover-title em {
+    font-style: normal;
+    color: var(--blue);
+  }
+
+  .cover-subtitle {
+    font-size: 11pt;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    max-width: 380px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+
+  .cover-meta-row {
+    display: flex;
+    gap: 32px;
+  }
+
+  .cover-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .cover-meta-label {
+    font-size: 6.5pt;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.8;
+  }
+
+  .cover-meta-value {
+    font-size: 9pt;
+    font-weight: 500;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .cover-bottom {
+    position: relative;
+    z-index: 1;
+    padding: 0 64px 52px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .cover-bottom-left {
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.04em;
+  }
+
+  .cover-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,102,255,0.15);
+    border: 1px solid rgba(0,102,255,0.3);
+    border-radius: 20px;
+    padding: 5px 12px;
+  }
+
+  .cover-badge-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #4DA3FF;
+  }
+
+  .cover-badge-text {
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4DA3FF;
+  }
+
+  /* ── CONTENT PAGES ─────────────────────────────────────── */
+  .page {
+    padding: 56px 64px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+  }
+
+  .page-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .page-header-mark {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+
+  .page-header-company {
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  .page-header-right {
+    font-size: 7.5pt;
+    color: var(--slate);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── SECTION HEADING ───────────────────────────────────── */
+  .section-eyebrow {
+    font-size: 6.5pt;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22pt;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  .section-sub {
+    font-size: 9pt;
+    color: var(--slate);
+    font-weight: 300;
+    margin-bottom: 32px;
+    max-width: 480px;
+    line-height: 1.6;
+  }
+
+  /* ── CHANGE GROUP ──────────────────────────────────────── */
+  .change-group {
+    margin-bottom: 36px;
+  }
+
+  .change-group-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .page-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .page-pill.blue {
+    background: var(--blue);
+  }
+
+  .page-pill.gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .change-group-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── CHANGE ITEM ───────────────────────────────────────── */
+  .change-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--off-white);
+    border-left: 3px solid var(--rule);
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .change-item.done {
+    border-left-color: var(--blue);
+    background: #F0F6FF;
+  }
+
+  .change-item.done .change-icon {
+    background: var(--blue);
+    color: var(--white);
+  }
+
+  .change-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .change-icon svg {
+    width: 11px; height: 11px;
+  }
+
+  .change-content {}
+
+  .change-label {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+
+  .change-detail {
+    font-size: 8pt;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+
+  .change-detail code {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 7.5pt;
+    background: rgba(0,102,255,0.08);
+    color: var(--blue);
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  /* ── BEFORE/AFTER ──────────────────────────────────────── */
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 6px;
+  }
+
+  .ba-box {
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 7.5pt;
+    line-height: 1.5;
+  }
+
+  .ba-box.before {
+    background: #FFF5F5;
+    border: 1px solid #FED7D7;
+    color: #C53030;
+  }
+
+  .ba-box.after {
+    background: #F0FFF4;
+    border: 1px solid #C6F6D5;
+    color: #276749;
+  }
+
+  .ba-label {
+    font-size: 6.5pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 3px;
+  }
+
+  .ba-value {
+    font-weight: 500;
+  }
+
+  /* ── SUMMARY TABLE ─────────────────────────────────────── */
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+
+  .summary-table th {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  .summary-table th:first-child { border-radius: 4px 0 0 4px; }
+  .summary-table th:last-child { border-radius: 0 4px 4px 0; }
+
+  .summary-table td {
+    padding: 9px 12px;
+    font-size: 8pt;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table tr:nth-child(even) td { background: var(--off-white); }
+
+  .status-done {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #276749;
+    background: #F0FFF4;
+    border: 1px solid #C6F6D5;
+    padding: 2px 7px;
+    border-radius: 10px;
+  }
+
+  /* ── FOOTER ────────────────────────────────────────────── */
+  .page-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .page-footer-left {
+    font-size: 7pt;
+    color: var(--slate);
+    opacity: 0.7;
+  }
+
+  .page-footer-right {
+    font-size: 7pt;
+    color: var(--slate);
+    opacity: 0.7;
+  }
+
+  /* ── CALLOUT BOX ───────────────────────────────────────── */
+  .callout {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .callout-icon {
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    background: rgba(0,102,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .callout-icon svg { width: 16px; height: 16px; color: #60A5FA; }
+
+  .callout-body {}
+
+  .callout-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .callout-text {
+    font-size: 8pt;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  /* ── PRINT ─────────────────────────────────────────────── */
+  @media print {
+    body { font-size: 10pt; }
+    .page { page-break-inside: avoid; }
+    .change-group { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════ COVER ══════════════════════ -->
+<div class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-accent"></div>
+  <div class="cover-corner-tl"></div>
+  <div class="cover-corner-br"></div>
+
+  <div class="cover-top">
+    <div class="cover-logo-row">
+      <div class="cover-logo-mark">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="8" width="14" height="3" rx="1.5" fill="white" opacity="0.9"/>
+          <rect x="2" y="4" width="9" height="3" rx="1.5" fill="white" opacity="0.5"/>
+          <rect x="2" y="12" width="11" height="3" rx="1.5" fill="white" opacity="0.7"/>
+        </svg>
+      </div>
+      <span class="cover-company">Surnetics LLC</span>
+    </div>
+    <div class="cover-divider"></div>
+  </div>
+
+  <div class="cover-body">
+    <p class="cover-eyebrow">Website Revision Report</p>
+    <h1 class="cover-title">
+      Site Update<br/>
+      <em>March 2026</em>
+    </h1>
+    <p class="cover-subtitle">
+      A complete record of all requested revisions applied to surnetics.com — changes, rationale, and implementation details.
+    </p>
+    <div class="cover-meta-row">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Date Issued</span>
+        <span class="cover-meta-value">March 13, 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Pages Affected</span>
+        <span class="cover-meta-value">5 Pages</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Total Changes</span>
+        <span class="cover-meta-value">10 Revisions</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Status</span>
+        <span class="cover-meta-value">Deployed ✓</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <span class="cover-bottom-left">CONFIDENTIAL — SURNETICS LLC · surnetics.com</span>
+    <div class="cover-badge">
+      <div class="cover-badge-dot"></div>
+      <span class="cover-badge-text">All Changes Live</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ PAGE 2: HOME + TECH ══════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="page-header-mark"></div>
+      <span class="page-header-company">Surnetics — Website Revision Report</span>
+    </div>
+    <span class="page-header-right">March 13, 2026</span>
+  </div>
+
+  <p class="section-eyebrow">Section 01</p>
+  <h2 class="section-title">Home Page Revisions</h2>
+  <p class="section-sub">Three targeted changes to the homepage — removing outdated badge text, correcting the flow animation direction, and updating the team bio for accuracy.</p>
+
+  <!-- CHANGE 1 -->
+  <div class="change-group">
+    <div class="change-group-header">
+      <span class="page-pill blue">Change 1 of 3</span>
+      <div class="change-group-rule"></div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Remove Patent Badge from Hero Section</p>
+        <p class="change-detail">
+          The "US Patent 9,968,930 B2 · Active" badge pill that appeared above the headline in the hero was removed. The patent information is fully represented elsewhere on the site (IP Portfolio page, stats bar) and the badge added visual clutter to the hero without adding strategic value.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHANGE 2 -->
+  <div class="change-group">
+    <div class="change-group-header">
+      <span class="page-pill blue">Change 2 of 3</span>
+      <div class="change-group-rule"></div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Correct Flow Direction in Hero Animation</p>
+        <p class="change-detail">
+          The microfluidic channel animation labels were swapped to accurately represent the physics. Fluid self-propels from a region of <strong>Low Surface Energy toward High Surface Energy</strong> — matching the mechanism described in the patent and the Technology page text.
+        </p>
+        <div class="before-after">
+          <div class="ba-box before">
+            <p class="ba-label">Before (incorrect)</p>
+            <p class="ba-value">Left: HIGH SURFACE ENERGY → Right: LOW SURFACE ENERGY</p>
+          </div>
+          <div class="ba-box after">
+            <p class="ba-label">After (corrected)</p>
+            <p class="ba-value">Left: LOW SURFACE ENERGY → Right: HIGH SURFACE ENERGY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHANGE 3 -->
+  <div class="change-group">
+    <div class="change-group-header">
+      <span class="page-pill blue">Change 3 of 3</span>
+      <div class="change-group-rule"></div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Update Brian Babcock Bio — Team Strip</p>
+        <p class="change-detail">Updated the credential line in the "Team Behind the Technology" strip at the bottom of the homepage.</p>
+        <div class="before-after">
+          <div class="ba-box before">
+            <p class="ba-label">Before</p>
+            <p class="ba-value">Registered US Patent Agent · Vanderbilt B.S./M.S. ChemE · Argonne National Laboratory</p>
+          </div>
+          <div class="ba-box after">
+            <p class="ba-label">After</p>
+            <p class="ba-value">Microfluidics and Coatings Expert — Registered US Patent Agent · Vanderbilt B.S./M.S. ChemE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TECHNOLOGY ── -->
+  <p class="section-eyebrow" style="margin-top:8px;">Section 02</p>
+  <h2 class="section-title">Technology Page Revisions</h2>
+  <p class="section-sub">Two corrections to the Technology page — the gradient diagram direction and the patent protection date.</p>
+
+  <!-- CHANGE 4 -->
+  <div class="change-group">
+    <div class="change-group-header">
+      <span class="page-pill blue">Change 1 of 2</span>
+      <div class="change-group-rule"></div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Correct Flow Direction in Channel Diagram</p>
+        <p class="change-detail">
+          The gradient channel cross-section diagram on the Technology page had its energy labels swapped — aligned to match the hero animation and the correct underlying physics. Flow arrow direction (left → right) is unchanged; the labels now correctly read LOW ENERGY on the left and HIGH ENERGY on the right.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHANGE 5 -->
+  <div class="change-group">
+    <div class="change-group-header">
+      <span class="page-pill blue">Change 2 of 2</span>
+      <div class="change-group-rule"></div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Update Patent Protection Horizon — "The Only Commercial Source"</p>
+        <p class="change-detail">The protection date in the "The Only Commercial Source" section was updated to reflect the full portfolio protection window including continuation applications.</p>
+        <div class="before-after">
+          <div class="ba-box before">
+            <p class="ba-label">Before</p>
+            <p class="ba-value">…patented platform with a 2034 protection horizon.</p>
+          </div>
+          <div class="ba-box after">
+            <p class="ba-label">After</p>
+            <p class="ba-value">…patented platform with a 2041 protection horizon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-left">Surnetics LLC · Confidential</span>
+    <span class="page-footer-right">Page 1 of 2</span>
+  </div>
+</div>
+
+<!-- ══════════════════════ PAGE 3: IP + MARKETS + ABOUT ══════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="page-header-mark"></div>
+      <span class="page-header-company">Surnetics — Website Revision Report</span>
+    </div>
+    <span class="page-header-right">March 13, 2026</span>
+  </div>
+
+  <!-- ── IP PORTFOLIO ── -->
+  <p class="section-eyebrow">Section 03</p>
+  <h2 class="section-title">IP Portfolio Page Revisions</h2>
+  <p class="section-sub">All three pending patent applications updated to use published US application numbers, each with a direct link to Google Patents.</p>
+
+  <div class="change-group">
+    <div class="change-group-header">
+      <span class="page-pill blue">3 Applications Updated</span>
+      <div class="change-group-rule"></div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Application 1 — Diagnostic Device with Integrated Sampler and Holder</p>
+        <div class="before-after">
+          <div class="ba-box before">
+            <p class="ba-label">Before</p>
+            <p class="ba-value">US Pat. Appl. 17/114,390</p>
+          </div>
+          <div class="ba-box after">
+            <p class="ba-label">After (with Google Patents link)</p>
+            <p class="ba-value">Published Application US 20210170405</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Application 2 — Microfluidic Products with Controlled Fluid Flow</p>
+        <div class="before-after">
+          <div class="ba-box before">
+            <p class="ba-label">Before</p>
+            <p class="ba-value">US Pat. Appl. 18/826,831</p>
+          </div>
+          <div class="ba-box after">
+            <p class="ba-label">After (with Google Patents link)</p>
+            <p class="ba-value">Published Application US 20240428117</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Application 3 — Diagnostic Device with Integrated Sampler and Holder</p>
+        <div class="before-after">
+          <div class="ba-box before">
+            <p class="ba-label">Before</p>
+            <p class="ba-value">US Patent Appl. 19/051,462</p>
+          </div>
+          <div class="ba-box after">
+            <p class="ba-label">After (with Google Patents link)</p>
+            <p class="ba-value">Published Application US 20250177980</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MARKETS ── -->
+  <p class="section-eyebrow" style="margin-top:8px;">Section 04</p>
+  <h2 class="section-title">Markets Page Revision</h2>
+  <p class="section-sub">One change — the blue banner strip at the bottom of the page was removed in full.</p>
+
+  <div class="change-group">
+    <div class="change-group-header">
+      <span class="page-pill blue">Change 1 of 1</span>
+      <div class="change-group-rule"></div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Remove Blue Banner Strip</p>
+        <p class="change-detail">
+          The thin blue bar reading "US Patent 9,968,930 B2 · Active Until 2034 · Cited by 44 Patents · View IP Portfolio →" was removed from the Markets page. The information was outdated (2034 date) and redundant with content presented elsewhere in the site.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <p class="section-eyebrow" style="margin-top:8px;">Section 05</p>
+  <h2 class="section-title">About Page Revision</h2>
+  <p class="section-sub">The Company History and Key Milestones timeline section was removed from the About page.</p>
+
+  <div class="change-group">
+    <div class="change-group-header">
+      <span class="page-pill blue">Change 1 of 1</span>
+      <div class="change-group-rule"></div>
+    </div>
+
+    <div class="change-item done">
+      <div class="change-icon">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="change-content">
+        <p class="change-label">Remove Company History / Key Milestones Section</p>
+        <p class="change-detail">
+          The full timeline section — including the "Company History" heading, "Key Milestones" heading, and all four milestone entries (2014 PCT Filing, 2018 Patent Grant, 2018–2023 Portfolio Development, 2024 Commercialization) — was removed from the About page. The page flows directly from the Team section to the CTA.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SUMMARY TABLE ── -->
+  <div style="margin-top:32px;">
+    <p class="section-eyebrow">Summary</p>
+    <h2 class="section-title" style="font-size:16pt; margin-bottom:4px;">Complete Change Log</h2>
+    <p class="section-sub" style="margin-bottom:16px;">All 10 revisions implemented and deployed to production.</p>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th style="width:18%">Page</th>
+          <th style="width:52%">Change</th>
+          <th style="width:15%">Type</th>
+          <th style="width:15%">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Home</strong></td>
+          <td>Removed "US Patent 9,968,930 B2 · Active" hero badge</td>
+          <td>Content removal</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td><strong>Home</strong></td>
+          <td>Corrected hero animation: Low → High surface energy flow</td>
+          <td>Label correction</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td><strong>Home</strong></td>
+          <td>Updated Brian Babcock bio credential line</td>
+          <td>Copy update</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td><strong>Technology</strong></td>
+          <td>Corrected channel diagram: Low → High energy flow direction</td>
+          <td>Label correction</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td><strong>Technology</strong></td>
+          <td>Updated protection horizon: 2034 → 2041</td>
+          <td>Date correction</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td><strong>IP Portfolio</strong></td>
+          <td>Updated pending application 1 to US 20210170405 + Google Patents link</td>
+          <td>Number correction</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td><strong>IP Portfolio</strong></td>
+          <td>Updated pending application 2 to US 20240428117 + Google Patents link</td>
+          <td>Number correction</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td><strong>IP Portfolio</strong></td>
+          <td>Updated pending application 3 to US 20250177980 + Google Patents link</td>
+          <td>Number correction</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td><strong>Markets</strong></td>
+          <td>Removed blue patent banner strip</td>
+          <td>Content removal</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td><strong>About</strong></td>
+          <td>Removed Company History / Key Milestones section</td>
+          <td>Section removal</td>
+          <td><span class="status-done">✓ Done</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout" style="margin-top:28px;">
+    <div class="callout-icon">
+      <svg viewBox="0 0 16 16" fill="none" stroke="#60A5FA" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 2"/></svg>
+    </div>
+    <div class="callout-body">
+      <p class="callout-title">All changes are live on surnetics.com</p>
+      <p class="callout-text">All 10 revisions were applied to the codebase, built without errors, committed to the GitHub repository (watchdogpedro/surnetics), and deployed to production via Vercel. No further action required.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-left">Surnetics LLC · Confidential · March 2026</span>
+    <span class="page-footer-right">Page 2 of 2</span>
+  </div>
+</div>
+
+</body>
+</html>
