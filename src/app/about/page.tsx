@@ -17,7 +17,7 @@ const team = [
     initials: "BB",
     name: "Brian Babcock",
     title: "Inventor & President",
-    bio: "Brian invented all of Surnetics' Surface Energy Gradient Coating technology and is the lead inventor on the core US patent. As a Registered US Patent Agent with deep experience in IP strategy and commercial valuation, he oversees the company's technical development and patent portfolio.",
+    bio: "Brian invented all of Surnetics' Surface Energy Gradient Coating technology and is the lead inventor on its patents. With deep experience in IP strategy and commercial valuation, he oversees the company's technical development and patent portfolio.",
     credentials: [
       "Lead Inventor, 5 Granted US Patents (9,968,930 · 10,821,438 · 11,583,858 · 12,083,517 · 12,263,480)",
       "Registered US Patent Agent",
