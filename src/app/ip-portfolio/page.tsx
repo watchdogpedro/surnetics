@@ -174,9 +174,7 @@ export default function IPPortfolioPage() {
             5 Active US Patents
           </h2>
           <p className="text-[#8892A4] text-base leading-relaxed">
-            All patents are assigned to Surnetics LLC and cover the core methods,
-            products, and devices built on Surface Energy Gradient Coating
-            technology. Click any patent number to view the full document.
+            Patents
           </p>
         </div>
 
