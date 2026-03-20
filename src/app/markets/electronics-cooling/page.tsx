@@ -80,7 +80,7 @@ const deepDiveApplications: ApplicationItem[] = [
       "Self-contained passive cooling per server node — no shared pump infrastructure",
       "Eliminates centralized pump systems and complex plumbing manifolds",
       "Reduces leak risk by eliminating pump seals and high-pressure fittings",
-      "Zero maintenance cooling — no pump replacements over 10+ year facility lifetime",
+      "Zero maintenance cooling — possibly no pump replacements over 10+ year facility lifetime",
       "Compatible with both direct-to-chip and immersion cooling architectures",
       "Addresses the #1 barrier to liquid cooling adoption in enterprise data centers",
     ],
