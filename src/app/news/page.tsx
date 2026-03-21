@@ -138,15 +138,9 @@ export default function NewsPage() {
                   <h2 className="text-[#0A1628] font-extrabold text-xl md:text-2xl leading-tight tracking-tight mb-3">
                     {article.title}
                   </h2>
-                  <p className="text-[#8892A4] text-sm leading-relaxed mb-5">
+                  <p className="text-[#8892A4] text-sm leading-relaxed">
                     {article.excerpt}
                   </p>
-                  <Link
-                    href={`/news/${article.slug}/`}
-                    className="inline-flex items-center gap-1.5 text-[#0066FF] font-semibold text-sm hover:gap-2.5 transition-all duration-200"
-                  >
-                    Read article <ArrowRight size={13} />
-                  </Link>
                 </div>
               </article>
             ))}
