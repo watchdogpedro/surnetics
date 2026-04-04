@@ -1,0 +1,154 @@
+First,Last,Company,Position,Email
+Suja,Subramaniam,Roche,Head of Intellectual Property,suja.subramaniam@roche.com
+Sabine,Wildschuetz,Roche,Chief Patent Counsel Diabetes,sabine.wildschuetz@roche.com
+Mona,Gupta,Roche Diabetes Care,Global Head of IP Management,mona.gupta@roche.com
+Florian,Schindler,Roche Diabetes Care,Global Head of R&D,florian.schindler@roche.com
+William,Baxter,GE Healthcare,IP Counsel,william.baxter@ge.com
+Daniel,Potvin,GE Healthcare,Licensing & Strategy,Daniel.Potvin@ge.com
+Rachel,Bach,Abbott Laboratories,Divisional VP and Associate General Counsel IP Diagnostics,rachel.bach@abbott.com
+Steve,Hackett,Abbott Laboratories,Director Licensing & Acquisitions,steve.hackett@abbott.com
+Patrick,Kippes,Abbott Laboratories,Divisional VP Innovation Product Strategy M&A,patrick.kippes@abbott.com
+Daniel,Kaiser,Abbott Laboratories,Global Head of R&D,dan.kaiser@abbott.com
+John,Kroeze,Philips Healthcare,Opportunity Identification Officer,john.kroeze@philips.com
+David,Cruikshank,Danaher,Vice President,david.cruikshank@danaher.com
+Nadeem,Bridi,Danaher,Chief Intellectual Property Counsel,nadeem.bridi@danaher.com
+Rob,Follett,Danaher,Director of Innovation,rob.follett@danaher.com
+Jason,Piche,Danaher (Beckman Coulter Diagnostics),Chief IP Counsel,JPiche@beckman.com
+Austin,Wang,Danaher (SCIEX),Chief IP Counsel,austin.wang@sciex.com
+Wayne,Brown,Quest Diagnostics,Vice President IP & Deputy GC,wayne.b.brown@questdiagnostics.com
+Stephen,Mariano,Fujifilm Medical,Global VP EndoSurgical R&D,stephen.mariano@fujifilm.com
+Jeff,Minnich,Fujifilm Medical,Executive Global Product Director,jminnich@fujifilm.com
+John,Lucas,Fujifilm Medical,VP Corporate Strategic Initiatives,john.lucas@fujifilm.com
+Mark,Lindsey,Becton-Dickinson,Director Intellectual Property,mark_lindsey@bd.com
+Jose,Rivera-Vega,Becton-Dickinson,VP Manufacturing Technology,jose_rivera-vega@bd.com
+Jon,Burkholz,Becton-Dickinson,R&D Director,jon_burkholz@bd.com
+Suzanne,Ferreri,Becton-Dickinson,Director R&D New Product Development,suzanne_ferreri@bd.com
+Lata,Handiwala,Becton-Dickinson,Medical Affairs Advanced Drug Delivery,lata.handiwala@bd.com
+Nils,Pirschel,Siemens Healthineers,Head of IP Licensing M&A,nils.pirschel@siemens-healthineers.com
+Golo,Henning,Siemens Healthineers,Head of IP Team,golo.henning@siemens-healthineers.com
+Tom,Kiselak,Thermo Fisher Scientific,Associate IP Counsel,thomask@thermofisher.com
+Saunders,Ching,Thermo Fisher Scientific,Director External Innovation,saunders.ching@thermofisher.com
+Hugh,Pasika,Thermo Fisher Scientific,VP Intellectual Property,hugh.pasika@thermofisher.com
+Maya,Casanova,Thermo Fisher Scientific,Director Strategy & Business Development,maya.casanova@thermofisher.com
+Chuck,Cappellari,Hologic,Associate VP Chief IP Counsel Diagnostics,chuck.cappellari@hologic.com
+Eugene,Mensah,Canon Medical Systems,Chief Scientist and Global Vascular R&D,emensah@us.medical.canon
+Chris,Hare,Canon Medical Systems,Executive Director Medical Healthcare,chare@us.medical.canon
+Takehiko,Hori,Canon Medical Systems,Vice President,thori@us.medical.canon
+Peter,Cody,IDEXX Laboratories,Chief IP Officer,peter-cody@idexx.com
+Alex,Rabinsky,Sysmex,Deputy General Counsel,rabinskya@sysmex.com
+Tracey,Colpitts,Sysmex,VP R&D,colpittst@sysmex.com
+Juliet,Cunningham,QuidelOrtho,Vice President,juliet.cunningham@quidelortho.com
+Jonathan,Siegrist,QuidelOrtho,EVP R&D and CTO,jonathan.siegrist@quidelortho.com
+David,Segal,QuidelOrtho,VP Associate General Counsel,david.segal@quidelortho.com
+Rohan,Thakur,Bruker,President,Rohan.Thakur@bruker.com
+Jeffrey,Zonderman,Bruker,Senior Vice President,Jeffrey.Zonderman@bruker.com
+Yibing,Huang,Bruker,R&D Senior Manager,yibing.huang@bruker.com
+Eli,Hefner,Bio-Rad Laboratories,Director of New Technologies,eli_hefner@bio-rad.com
+Kalyan,Handique,Bio-Rad Laboratories,Chief Innovation Officer,kalyan_handique@bio-rad.com
+Josh,Shinoff,Bio-Rad Laboratories,VP Business Development,josh_shinoff@bio-rad.com
+Kevin,Oliver,Revvity,Chief Intellectual Property Counsel,kevin.oliver@revvity.com
+Tarun,Taneja,Revvity,Corporate Development & Strategy,tarun.taneja@revvity.com
+Sebastian,Rakus,Revvity,R&D Manager,sebastian.rakus@revvity.com
+John,Walter,DiaSorin,President,John.Walter@diasorin.com
+Tina,Bunnell,DiaSorin,Director of Product Development,tina.bunnell@diasorin.com
+Michelle,Tabb,DiaSorin,VP & Chief Scientific Officer,michelle.tabb@diasorin.com
+Jon,Pensirikul,SGS,Corporate Development,jon.pensirikul@sgs.com
+Chris,Reitmeyer,SGS,Director Operations and Business Development,christopher.reitmeyer@sgs.com
+Derick,Govender,SGS,Head of North America,derick.govender@sgs.com
+Marcello,Pozzoni,SGS,CFO North America,marcello.pozzoni@sgs.com
+Mark,Campagna,Dexcom,Senior Director IP Strategy Licensing and Acquisitions,mark.campagna@dexcom.com
+Yael,Glassman,Medtronic Diabetes,VP of BD Strategy & Diabetes,yael.glassman@medtronic.com
+Mike,Bruggerman,Medtronic Diabetes,VP Chief Information Officer Diabetes,Mike.Bruggeman@medtronic.com
+Thomas,Steffen,Medtronic,Head of IP Global Regions and Corporate Patent Portfolio Strategy,thomas.steffen@medtronic.com
+Sean,Edman,Medtronic,VP IP Enterprise Strategy,sean.edman@medtronic.com
+John,Thompson,Medtronic,Senior Legal Director Intellectual Property,john.thompson@medtronic.com
+Tom,Andersen,Insulet,Chief IP Counsel VP,tandersen@insulet.com
+Jeff,Mann,Embecta,SVP General Counsel and Head of Business Development,jeff.mann@embecta.com
+Tom,Blount,Embecta,SVP President North America,tom.blount@embecta.com
+Dev,Kurdikar,Embecta,President and CEO,devdatt.kurdikar@embecta.com
+Wayne,DeMello,Tandem Diabetes Care,Director and Senior Corporate Counsel IP,wdemello@tandemdiabetes.com
+Shannon,Hansen,Tandem Diabetes Care,General Counsel,shansen@tandemdiabetes.com
+Ivan,Heutschi,Ypsomed,Head of Innovation & Business Development,ivan.heutschi@ypsomed.com
+Andreas,Schneider,Ypsomed,Head of Innovation Delivery Systems,andreas.schneider@ypsomed.com
+Christoph,Berger,Ypsomed,Head of Corporate Development,christoph.berger@ypsomed.com
+Timothy,Goodnow,Senseonics,President & CEO,timothy.goodnow@senseonics.com
+Jeff,Ruiz,Senseonics,Head of Strategy & Commercial Business Development,jeff.ruiz@senseonics.com
+Abhi,Chavan,Senseonics,VP Engineering R&D,abhi.chavan@senseonics.com
+Jennifer,Pascua,Illumina,VP Global Intellectual Property,jpascua@illumina.com
+David,Meyer,Illumina,Associate Director Global Intellectual Property,dmeyer@illumina.com
+Jeff,Mikrut,Illumina,Director Legal Global Intellectual Property,jmikrut@illumina.com
+Zara,Doddridge,10X Genomics,Senior Director Intellectual Property,zara.doddridge@10xgenomics.com
+Eric,Whitaker,10X Genomics,EVP Chief Legal Officer,eric.whitaker@10xgenomics.com
+Christine,Nassi,Bruker Cellular,VP Associate General Counsel,christine.nassi@brukercellularanalysis.com
+Volker,Kurz,Bruker Cellular,Director R&D,volker.kurz@brukercellularanalysis.com
+France,Hamber,Fluigent,CEO,france.hamber@fluigent.com
+Krzysztof,Kludys,Fluigent,Director de Production,krzysztof.kludys@fluigent.com
+Jiakun,Yang,Fluigent,Business Development Manager,jiakun.yang@fluigent.com
+Shawn,Cheng,Verily Life Sciences,Head of Intellectual Property Director,scheng@verily.com
+Rohit,Talreja,Verily Life Sciences,Senior Director Head of Product,rtalreja@verily.com
+Pam,Ancono,Roche Molecular Systems,Head of Intellectual Property,pam.ancono@roche.com
+Reza,Savari,Roche Molecular Systems,Global Diagnostic Partnering Lead,reza.savari@roche.com
+Marcus,Skovhus,Roche Molecular Systems,Head of Strategic Insights,marcus.skovhus@roche.com
+David,Melaugh,Element Biosciences,General Counsel,david.melaugh@elembio.com
+Matthew,Kellinger,Element Biosciences,Co-Founder,mkellinger@elembio.com
+Yaron,Hakak,Element Biosciences,SVP Corporate and Business Development,yaron.hakak@elembio.com
+Brian,Libby,Harvard/MIT/Broad Institute,Associate Director IP,blibby@broadinstitute.org
+Ellen,Law,Harvard/MIT/Broad Institute,Senior Advisor to the Director,ELaw@broadinstitute.org
+Jasbir,Sagoo,Agilent Technologies,Associate VP of Intellectual Property,jasbir.sagoo@agilent.com
+Katharine,Altemus,Agilent Technologies,Counsel Intellectual Property,katharine.altemus@agilent.com
+Troy,Svihl,Neogen,IP Counsel,troy.svihl@neogen.com
+Amy,Rocklin,Neogen,Chief Legal,arocklin@neogen.com
+James,Clark,Neogen,Director of Research & Development,jclarke@neogen.com
+Sailaja,Kuchibhatla,Eurofins,President,sailajakuchibhatla@eurofins.com
+Mary Kay,Krogull,Eurofins,President,marykaykrogull@eurofinsus.com
+Louis,Leong,Eurofins,VP of R&D,louisleong@eurofinsus.com
+Mark,Muldoon,Romer Labs (dsm Firmenich),Director R&D,mark.muldoon@romerlabs.com
+Theo,Spilka,Firmenich,Global VP Strategic Licensing and Business Development,theo.spilka@firmenich.com
+Stanley,Charm,Charm Sciences,President,stanleyc@charm.com
+Rick,Skiffington,Charm Sciences,VP of Engineering,ricks@charm.com
+Robert,Markovsky,Charm Sciences,President,RobertM@charm.com
+Joaquin,Gamboa,Everlywell,Chief Business & Legal Officer,jgamboa@everlyhealth.com
+Nick,Parker,Everlywell,CTO & COO,nparker@everlyhealth.com
+Ilia,Vinogradov,Everlywell,Chief Scientific Officer,ivinogradov@everlyhealth.com
+Jay,Srinivasan,Truvian,CEO,Jay.Srinivasan@truvianhealth.com
+Dena,Marrinucci,Truvian,Co-Founder and COO,Dena.Marrinucci@truvianhealth.com
+Alison,Marquez O'Neill,Pfizer,VP & Chief Counsel M&A and Licensing,alison.oneill@pfizer.com
+James,List,Pfizer,Chief Internal Medicine Officer,james.list@pfizer.com
+Chris,Boshoff,Pfizer,Chief Scientific Officer and President R&D,chris.boshoff@pfizer.com
+Andrew,Muratore,Pfizer,VP & Assistant General Counsel M&A & Pfizer Ventures,andrew.muratore@pfizer.com
+Josh,Levine,Pfizer Research & Development,Global Clinical Lead Obesity Clinical Development,joshua.levine@pfizer.com
+Denis,Brusnikin,Bayer,M&A Business Development & Licensing,denis.brusnikin@bayer.com
+Timothy,Joyce,Bayer HealthCare,Assistant General Counsel for Patents,Timothy.Joyce@bayer.com
+Deb,Pfennig,Johnson & Johnson (Janssen),VP Business Development Diagnostics & Enabling Technologies,dpfennig@its.jnj.com
+Elliot,Barnathan,Janssen Research and Development,Executive Director,elliotbarnathan@jnj.com
+Matt,Ault,Johnson & Johnson,Director Global Portfolio Management,mault@its.jnj.com
+Brian,Hansen,Ascensia Diabetes Care,President,brian.hansen@ascensia.com
+Philip,Piscitelli,Ascensia Diabetes Care,US Country Head Diabetes Care BGM,philip.piscitelli@ascensia.com
+Skip,Krause,Nova Biomedical,Corporate Director Business Development,SKrause@novabio.com
+James,Fowler,Nova Biomedical,Executive Vice President,jimf@novabio.com
+Ken,Paulino,Sanofi,VP Head of US Diabetes Business Unit,kenneth.paulino@sanofipasteur.com
+Meghan,Klaric,Sanofi,Senior IP Transactions Counsel Global BD & M&A,meghan.klaric@sanofi.com
+Jeff,Weber,Sanofi,Principal Counsel Strategy and Business Development and M&A Patents,jeffrey.weber@sanofi.com
+Clayton,Edwards,AscellaHealth,COO Mergers & Acquisitions,clayton.edwards@ascellahealth.com
+Omar,Amnejwala,DarioHealth,Chief Medical Officer,omar.amnejwala@dariohealth.com
+Stacie,Vanags,DarioHealth,VP of Strategic Partnerships,staciev@dariohealth.com
+Chris,Wasden,DarioHealth,Head of Pharma and Chief Strategy Officer,chris.wasden@dariohealth.com
+Angela,Karpf,Insulet,VP Medical Affairs,akarpf@insulet.com
+Matt,Lord,Eli Lilly,Associate VP,lord_matthew_t@lilly.com
+Brad,Crawford,Eli Lilly,Associate VP Patent Counsel,crawford_brad_wayne@lilly.com
+Michael,Johnson,Eli Lilly,VP Business Development,johnson_michael_andrew@lilly.com
+Sardiaa,Leney,PerkinElmer,Chief IP Counsel,sardiaa.leney@perkinelmer.com
+Anshul,Mangal,PerkinElmer,President,anshul.mangal@perkinelmer.com
+Joern,Mosner,Quidel,VP R&D,joern.mosner@quidelortho.com
+Jason,McClure,Quidel,Senior Director of Technical Operations,jmcclure@quidel.com
+Kevin,Richardson,Quidel,VP Manufacturing,kevin.richardson@quidel.com
+John,Peterson,LabCorp,Associate General Counsel,John.Peterson@labcorp.com
+Haseeb,Ashraf,LabCorp,VP Global Corporate Development,ashraf.haseeb@labcorp.com
+Scott,Bernstein,Avidity Biosciences,VP IP Law,sbernste@aviditybiosciences.com
+John,Sperzel,T2 Biosystems,Chairman & CEO,jsperzel@t2biosystems.com
+Michael,Gibbs,T2 Biosystems,General Counsel,mgibbs@t2biosystems.com
+James,Anderson,Know Labs,Chief Medical Officer,james@knowlabs.co
+Casey,Pittock,Smart Meter,CEO,casey.pittock@iglucose.com
+Derek,Trauger,Smart Meter,CTO,derek.trauger@iglucose.com
+Jonathan,Chapman,Trividia Health,CEO,jonathan.chapman@trividiahealth.com
+Jason,Mondek,Trividia Health,Corporate Vice President,jason.mondek@trividiahealth.com
