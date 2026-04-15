@@ -12,6 +12,33 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    date: "April 2026",
+    tag: "Press Release",
+    title: "Liquid Control Without Pumps, Valves, or Hardware: Becker Transactions Unveils Breakthrough Diagnostics with Surface Energy Gradient Coatings for Fast and Accurate Condition Monitoring and Disease Detection",
+    slug: "becker-transactions-diagnostics-press-release",
+    excerpt:
+      "Becker Transactions, a world-leading patent brokerage firm, today announces a high-value patent portfolio set to revolutionize at-home and point-of-care diagnostic testing — enabling liquid control without pumps, valves, or hardware using Surface Energy Gradient Coatings.",
+    body: `Becker Transactions, a world-leading patent brokerage firm, today proudly announces the availability of a high-value patent portfolio that is set to revolutionize at-home and point-of-care diagnostic testing. No Lab, No Power, No Problem: Diagnostic devices with Surface Energy Gradient Coatings work anywhere.
+
+As the demand continues to grow for rapid, accurate, and easy-to-use diagnostic tests — ranging from disease screening to chronic condition monitoring — in non-laboratory locations such as at-home and point-of-care environments, current tests struggle with limitations in accuracy, flow variability, and fluid handling. Tests that require additional fluid addition or mixing steps from the user can also be prone to failure.
+
+This innovative diagnostic patent portfolio, developed by Brian Babcock, covers surface energy gradient coating technology and microfluidic product designs that fundamentally transform how diagnostic devices manage liquid flow and testing. A surface energy gradient coating changes the capillary pressure applied to a liquid as it flows down a channel. These coatings can be used to control multiple flow characteristics on a device including flow velocity and stop/start behavior. Multiple channels can have different flow velocities, allowing for multiple tests with different reaction times to be performed in a single device while simplifying the design. Time delays for introducing reactants can be designed into the product without requiring additional user input. The portfolio currently consists of 5 granted patents and 3 pending patent applications (1 allowed). The earliest cases have a priority date of 2013, with the later patents in the portfolio extending to 2041.
+
+"Using surface energy gradient coatings on a diagnostic device creates many opportunities that cannot be achieved in current at-home and point-of-care devices. Different channels can have different coatings that control fluid flow velocity, allowing for multiple tests or timed delivery of fluids to a zone," Babcock said. "For example, diabetes patients often want to monitor HbA1c levels and glucose levels, but glucose levels can be obtained in seconds while HbA1c levels often take 3 minutes or more. Using our gradient coatings we were able to create a flow channel for glucose testing and a flow channel for HbA1c testing, allowing a single blood sample to be tested for both. In another example, our coatings have been used to delay the delivery of an on-board wash sample to a reaction zone, allowing time for antibodies to bind to proteins before non-bound species were washed away. This design improves the accuracy of lateral flow tests while also greatly reducing the chance of user error."
+
+By precisely engineering surface energy gradients, fluids move at controlled rates and paths, enabling accurate and reproducible test results that are critical for both qualitative and quantitative diagnostics. Instead of relying on complex pumps, wicking structures, multiple reagent additions, or conventional hardware, the precision coatings passively control fluid movement — enabling faster, simpler, and more reliable diagnostics for at-home, point-of-care, lab-on-a-chip, and other remote testing environments.
+
+Mr. Babcock founded Surnetics LLC to develop and commercialize the technology. Although his initial inspiration for the technology was rocket nozzle cooling, he quickly recognized the benefits it would provide in diagnostic and life science applications. "From the beginning, work on the gradient coating technology has been focused on developing coating formulations and coating processes that meet the cost and volume requirements for large-scale precision manufacturing. We have developed coating formulations for the preferred plastic, metal, and glass materials used in diagnostic and life science applications. Our automated precision manufacturing process can support companies' development and early commercialization efforts and is also scalable and can be integrated into their product manufacturing lines."
+
+**About Brian Babcock**
+
+Brian Babcock is the inventor on the gradient coating technology patents. A recognized expert in coating and polymer materials, he has over 30 years of expertise with surface modification, specialty coatings, and material development across multiple industries. He is a registered patent agent with previous Intellectual Property Manager roles at Donaldson Company (filtration), SunEdison/GCL Solar Materials (solar and semiconductors), and Johnson & Johnson (life science). He holds BS and MS degrees in chemical engineering from Vanderbilt University.
+
+**About Becker Transactions**
+
+Becker Transactions is a world-leading patent brokerage firm expertly led by Dean Becker and Olivia Becker, a father-daughter team who bring a rich family legacy of navigating complex intellectual property transactions. Our team has collectively facilitated over $11 billion USD in intellectual property transactions. With decades of experience collaborating with inventors, government agencies, top research institutes, universities, and major corporations, we specialize in technology monetization — identifying essential intellectual property assets and connecting them with strategic buyers seeking competitive advantages.`,
+  },
+  {
     date: "March 2026",
     tag: "Company News",
     title: "Surnetics Patent Portfolio Listed for Acquisition or License",
