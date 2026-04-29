@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     "microfluidic cooling",
     "electronics cooling IP",
   ],
+  alternates: { canonical: "/markets/electronics-cooling" },
 };
 
 const applications = [

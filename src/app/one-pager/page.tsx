@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PrintButton from "./PrintButton";
 
 export const metadata: Metadata = {
-  title: "Surnetics — Microfluidics Patent Portfolio",
-  description: "One-page overview of the Surnetics microfluidics patent portfolio available for sale or licensing.",
-  robots: { index: false, follow: false },
+  title: "Surnetics — Microfluidics Patent Portfolio One-Pager",
+  description: "One-page overview of the Surnetics microfluidics patent portfolio available for sale or licensing. 5 granted US patents in passive fluid control for diagnostics, drug delivery, and biosensing.",
+  alternates: { canonical: "/one-pager" },
 };
 
 export default function OnePagerPage() {

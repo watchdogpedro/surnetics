@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Drug Delivery | Passive Metered Flow for Controlled Release",
   description: "Metered passive flow enables controlled drug release without pumps or actuators — transdermal, implantable, and oral applications. Surnetics Surface Energy Gradient Coating technology.",
   keywords: ["drug delivery microfluidics","passive drug delivery","controlled release technology","transdermal drug delivery","pump-free drug delivery","microfluidic drug delivery licensing","implantable drug depot"],
+  alternates: { canonical: "/markets/drug-delivery" },
 };
 
 const applications = [

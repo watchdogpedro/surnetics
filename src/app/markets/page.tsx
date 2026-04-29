@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "clinical lab automation IP",
     "wearable biosensor patent",
   ],
+  alternates: { canonical: "/markets" },
 };
 
 const markets = [

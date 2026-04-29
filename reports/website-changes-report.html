@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Changes Report — Surnetics LLC</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0A1628;
+      --blue: #0066FF;
+      --blue-light: #E8F0FF;
+      --gray-light: #F5F7FA;
+      --gray-mid: #8892A4;
+      --gray-dark: #2D3748;
+      --border: #E2E8F0;
+      --green: #059669;
+      --green-light: #D1FAE5;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--gray-dark);
+      background: #fff;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── COVER PAGE ── */
+    .cover {
+      background: var(--navy);
+      color: white;
+      min-height: 280px;
+      padding: 56px 64px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: var(--blue);
+      opacity: 0.07;
+    }
+
+    .cover-tag {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .cover h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 32px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .cover-meta-item label {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 4px;
+    }
+
+    .cover-meta-item span {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── SUMMARY BAR ── */
+    .summary-bar {
+      background: var(--gray-light);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 64px;
+      display: flex;
+      gap: 48px;
+    }
+
+    .stat-item label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-bottom: 4px;
+    }
+
+    .stat-item span {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    /* ── MAIN CONTENT ── */
+    .content {
+      padding: 40px 64px;
+    }
+
+    /* ── SECTION HEADERS ── */
+    .phase {
+      margin-bottom: 40px;
+    }
+
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .phase-date-badge {
+      background: var(--navy);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 5px 14px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .phase-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* ── CHANGE CARDS ── */
+    .change-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .change-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .change-card.highlight {
+      border-color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    .change-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .icon-new { background: var(--green-light); }
+    .icon-update { background: #DBEAFE; }
+    .icon-fix { background: #FEF3C7; }
+    .icon-infra { background: #F3E8FF; }
+
+    .change-body {}
+
+    .change-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .change-desc {
+      font-size: 12.5px;
+      color: #4A5568;
+      line-height: 1.55;
+    }
+
+    .change-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .tag-new { background: var(--green-light); color: var(--green); }
+    .tag-update { background: #DBEAFE; color: #1D4ED8; }
+    .tag-fix { background: #FEF3C7; color: #92400E; }
+    .tag-infra { background: #F3E8FF; color: #6D28D9; }
+
+    /* ── PAGE BREAK ── */
+    .page-break { page-break-after: always; }
+
+    /* ── FOOTER ── */
+    .report-footer {
+      background: var(--gray-light);
+      border-top: 1px solid var(--border);
+      padding: 18px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--gray-mid);
+      margin-top: 48px;
+    }
+
+    .report-footer strong { color: var(--navy); }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      body { font-size: 12px; }
+      .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .summary-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .change-card.highlight { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .phase-date-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .change-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .change-icon { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .cover-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .report-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    @page {
+      margin: 0.5in;
+    }
+
+    /* ── INTRO NOTE ── */
+    .intro-note {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin-bottom: 36px;
+      font-size: 13px;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    .intro-note strong { font-weight: 700; }
+
+    /* ── SECTION DIVIDER ── */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+      margin-top: 36px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-tag">Confidential — Client Delivery Report</div>
+    <h1>Surnetics LLC<br>Website Changes Report</h1>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>Prepared For</label>
+        <span>Surnetics LLC / Becker Transactions</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Report Date</label>
+        <span>April 15, 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Website</label>
+        <span>surnetics.com</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Repository</label>
+        <span>github.com/watchdogpedro/surnetics</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY BAR -->
+  <div class="summary-bar">
+    <div class="stat-item">
+      <label>Total Changes</label>
+      <span>40+</span>
+    </div>
+    <div class="stat-item">
+      <label>Pages Added</label>
+      <span>12</span>
+    </div>
+    <div class="stat-item">
+      <label>Pages Updated</label>
+      <span>8</span>
+    </div>
+    <div class="stat-item">
+      <label>Project Start</label>
+      <span>Feb 22, 2026</span>
+    </div>
+    <div class="stat-item">
+      <label>Latest Update</label>
+      <span>Apr 15, 2026</span>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="intro-note">
+      <strong>About this report:</strong> This document summarizes all content updates, new pages, fixes, and improvements made to the Surnetics LLC website since the initial launch in February 2026. Changes are organized chronologically, from most recent to earliest. All changes have been committed to GitHub and deployed to Vercel.
+    </div>
+
+    <!-- ── APRIL 2026 ── -->
+    <div class="section-label">Most Recent</div>
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">April 15, 2026</div>
+        <div class="phase-title">Becker Transactions Press Release</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card highlight">
+          <div class="change-icon icon-new">📰</div>
+          <div class="change-body">
+            <div class="change-title">New Article: Becker Transactions Press Release</div>
+            <div class="change-desc">
+              Added full press release as the featured news article on <strong>/news</strong>. Article title: <em>"Liquid Control Without Pumps, Valves, or Hardware: Becker Transactions Unveils Breakthrough Diagnostics with Surface Energy Gradient Coatings for Fast and Accurate Condition Monitoring and Disease Detection."</em><br><br>
+              Article includes: opening announcement, problem statement (limitations of current POC tests), full technology description (5 patents, 3 pending, 2013–2041 protection), Brian Babcock quote with HbA1c/glucose example and wash step example, passive flow technical explanation, Surnetics founding story with manufacturing quote, complete materials list (polymers, metals, glass/silicon), licensing options, About Brian Babcock bio, and About Becker Transactions section. Live at <strong>/news/becker-transactions-diagnostics-press-release</strong>.
+            </div>
+          </div>
+          <span class="change-tag tag-new">New</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── APRIL 4, 2026 ── -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">April 4, 2026</div>
+        <div class="phase-title">Email Infrastructure &amp; Outreach</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card">
+          <div class="change-icon icon-new">📧</div>
+          <div class="change-body">
+            <div class="change-title">Email Infrastructure Documentation</div>
+            <div class="change-desc">Added documentation for email setup including Outlook Legacy IMAP configuration, pdenman Send As confirmed working, and outreach campaign details.</div>
+          </div>
+          <span class="change-tag tag-infra">Infra</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-new">📋</div>
+          <div class="change-body">
+            <div class="change-title">Clean Outreach Contact List</div>
+            <div class="change-desc">Added clean outreach contact list with 148 contacts, duplicates removed. Ready for campaign use.</div>
+          </div>
+          <span class="change-tag tag-new">New</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MARCH 20, 2026 ── -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">March 20, 2026</div>
+        <div class="phase-title">News Page Fixes</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card">
+          <div class="change-icon icon-fix">🔧</div>
+          <div class="change-body">
+            <div class="change-title">Removed broken "Read Article" links from news cards</div>
+            <div class="change-desc">Removed "Read article" links from the news listing page cards that were pointing to non-existent article pages, preventing 404 errors.</div>
+          </div>
+          <span class="change-tag tag-fix">Fix</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-fix">🔧</div>
+          <div class="change-body">
+            <div class="change-title">Updated data center cooling copy</div>
+            <div class="change-desc">Changed "no pump replacements" to "possibly no pump replacements" on the electronics cooling market page for greater accuracy.</div>
+          </div>
+          <span class="change-tag tag-fix">Fix</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MARCH 16, 2026 ── -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">March 16, 2026</div>
+        <div class="phase-title">Content Accuracy Updates</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card">
+          <div class="change-icon icon-update">✏️</div>
+          <div class="change-body">
+            <div class="change-title">Updated Brian Babcock bio on About page</div>
+            <div class="change-desc">Revised and corrected Brian Babcock's biography on the About page with updated credentials and role history.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-update">✏️</div>
+          <div class="change-body">
+            <div class="change-title">Updated patent description text on IP Portfolio page</div>
+            <div class="change-desc">Corrected and refined the patent description copy on the IP Portfolio page for accuracy.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-fix">🔧</div>
+          <div class="change-body">
+            <div class="change-title">Replaced patent assignment label with "Patents"</div>
+            <div class="change-desc">Replaced an incorrect "patent assignment" text label with simply "Patents" on the IP Portfolio page.</div>
+          </div>
+          <span class="change-tag tag-fix">Fix</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ── MARCH 14, 2026 ── -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">March 14, 2026</div>
+        <div class="phase-title">March 2026 Site Improvement Round</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card">
+          <div class="change-icon icon-update">✏️</div>
+          <div class="change-body">
+            <div class="change-title">Applied all March 2026 website improvement recommendations</div>
+            <div class="change-desc">Comprehensive round of content and UI improvements across multiple pages based on client review feedback. Covers homepage, technology, IP portfolio, applications, and markets pages.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-fix">🔧</div>
+          <div class="change-body">
+            <div class="change-title">Updated LinkedIn URLs for Brian Babcock and Paul Denman</div>
+            <div class="change-desc">Fixed the LinkedIn profile links in the About page and contact section to point to the correct profiles.</div>
+          </div>
+          <span class="change-tag tag-fix">Fix</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-new">📄</div>
+          <div class="change-body">
+            <div class="change-title">Added March 2026 site changes reference documents</div>
+            <div class="change-desc">Documentation files added to the repository tracking all March 2026 changes for reference.</div>
+          </div>
+          <span class="change-tag tag-infra">Docs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MARCH 12–13, 2026 ── -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">March 12–13, 2026</div>
+        <div class="phase-title">Logo, Branding &amp; Marketing Sprint</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card">
+          <div class="change-icon icon-update">🎨</div>
+          <div class="change-body">
+            <div class="change-title">Applied March 2026 site revisions across 5 pages</div>
+            <div class="change-desc">Major content revisions across Homepage, Technology, IP Portfolio, Applications, and Markets pages based on client direction.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-update">🖼️</div>
+          <div class="change-body">
+            <div class="change-title">Logo branding — multiple iterations</div>
+            <div class="change-desc">Updated to new Surnetics branding with transparent PNG logo. Removed white background, adjusted sizing (3x larger), added "Patented Microfluidics IP" tagline to NavBar, then refined to final approved logo/tagline treatment used in both header and footer.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-new">📄</div>
+          <div class="change-body">
+            <div class="change-title">Added outbound marketing assets</div>
+            <div class="change-desc">Added email template, one-pager, and print styles for outbound marketing campaigns.</div>
+          </div>
+          <span class="change-tag tag-new">New</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-update">🔍</div>
+          <div class="change-body">
+            <div class="change-title">SEO optimization</div>
+            <div class="change-desc">Improved metadata across all pages, enhanced Applications page content, updated sitemap.xml, and added keyword content to footer for search visibility.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-update">🖼️</div>
+          <div class="change-body">
+            <div class="change-title">Technology page image updates</div>
+            <div class="change-desc">Replaced SVG channel diagram with microfluidic chip photo. Moved chip image to header banner. Halved banner image size for faster loading.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-update">💡</div>
+          <div class="change-body">
+            <div class="change-title">Major marketing improvements for IP licensing pitch</div>
+            <div class="change-desc">Comprehensive homepage and IP portfolio updates sharpening the acquisition/licensing message and targeting. Updated hero animation fluid slugs from rectangles to circles.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-new">📋</div>
+          <div class="change-body">
+            <div class="change-title">Redesigned patent blocks on IP Portfolio page</div>
+            <div class="change-desc">Redesigned patent display from basic cards to a document card style with a dark left panel, improving professionalism and readability.</div>
+          </div>
+          <span class="change-tag tag-new">New</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-new">📄</div>
+          <div class="change-body">
+            <div class="change-title">Added patent PDF viewer</div>
+            <div class="change-desc">Added an in-page PDF viewer modal to the IP Portfolio page, allowing visitors to view patent documents without leaving the site.</div>
+          </div>
+          <span class="change-tag tag-new">New</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MARCH 8, 2026 ── -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">March 8, 2026</div>
+        <div class="phase-title">Patent Data &amp; Visual Updates</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card">
+          <div class="change-icon icon-update">🖼️</div>
+          <div class="change-body">
+            <div class="change-title">Added biomedical lab image banner</div>
+            <div class="change-desc">Added a biomedical lab image banner on the homepage between the stats section and the markets grid, improving visual credibility.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-update">📋</div>
+          <div class="change-body">
+            <div class="change-title">Updated IP Portfolio page with full patent data</div>
+            <div class="change-desc">Updated the IP Portfolio page with complete patent numbers, titles, filing dates, and status for all 5 granted patents and 3 pending applications.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ── FEBRUARY 26, 2026 ── -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">February 26, 2026</div>
+        <div class="phase-title">Launch Updates</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card">
+          <div class="change-icon icon-update">🚀</div>
+          <div class="change-body">
+            <div class="change-title">Hero image, headline, and team cleanup</div>
+            <div class="change-desc">Updated hero background image and refined the primary headline on the homepage. Cleaned up team section content and layout.</div>
+          </div>
+          <span class="change-tag tag-update">Update</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FEBRUARY 23, 2026 ── -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">February 23, 2026</div>
+        <div class="phase-title">Individual Market Pages — Deep Dive Sections</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card">
+          <div class="change-icon icon-new">📄</div>
+          <div class="change-body">
+            <div class="change-title">6 Individual Market Pages Created</div>
+            <div class="change-desc">Created dedicated deep-dive pages for each of the six market segments, each with expandable accordion sections covering specific applications and use cases:</div>
+          </div>
+          <span class="change-tag tag-new">New</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 12px; padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #4A5568;">
+          <span style="width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0;"></span>
+          <strong style="color: var(--navy);">/markets/ivd-diagnostics</strong> — In-Vitro Diagnostics &amp; Point-of-Care: lateral flow assays, molecular diagnostics (PCR), blood chemistry panels
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #4A5568;">
+          <span style="width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0;"></span>
+          <strong style="color: var(--navy);">/markets/electronics-cooling</strong> — Electronics Thermal Management: passive heat transfer, zero parasitic power applications
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #4A5568;">
+          <span style="width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0;"></span>
+          <strong style="color: var(--navy);">/markets/implantable-devices</strong> — Implantable Medical Devices: no-power passive drug delivery, biosensing
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #4A5568;">
+          <span style="width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0;"></span>
+          <strong style="color: var(--navy);">/markets/drug-delivery</strong> — Drug Delivery: precisely metered microfluidic dosing
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #4A5568;">
+          <span style="width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0;"></span>
+          <strong style="color: var(--navy);">/markets/energy-storage</strong> — Energy Storage &amp; Generation: passive flow battery management
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #4A5568;">
+          <span style="width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0;"></span>
+          <strong style="color: var(--navy);">/markets/aerospace-defense</strong> — Aerospace &amp; Defense: zero failure point fluid systems
+        </div>
+      </div>
+
+      <div style="margin-top: 12px;">
+        <div class="change-list">
+          <div class="change-card">
+            <div class="change-icon icon-new">🔽</div>
+            <div class="change-body">
+              <div class="change-title">ApplicationAccordion component built</div>
+              <div class="change-desc">Built a reusable expandable accordion component used across all six market deep-dive pages for clean, structured content presentation.</div>
+            </div>
+            <span class="change-tag tag-new">New</span>
+          </div>
+          <div class="change-card">
+            <div class="change-icon icon-update">🔄</div>
+            <div class="change-body">
+              <div class="change-title">Markets overview page refactored</div>
+              <div class="change-desc">Refactored the main /markets page from a static grid into a navigation overview that links to each individual market deep-dive page. Six market pages added to sitemap.xml.</div>
+            </div>
+            <span class="change-tag tag-update">Update</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FEBRUARY 22, 2026 ── -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-date-badge">February 22, 2026</div>
+        <div class="phase-title">Initial Website Launch</div>
+      </div>
+      <div class="change-list">
+        <div class="change-card highlight">
+          <div class="change-icon icon-new">🚀</div>
+          <div class="change-body">
+            <div class="change-title">Complete Surnetics website built and launched</div>
+            <div class="change-desc">
+              Full website built from scratch and deployed to Vercel. Pages included at launch: <strong>Homepage</strong> (hero, stats, markets grid, technology teaser, team strip, CTAs), <strong>Technology</strong> (mechanism, materials, analytical capabilities, engagement process), <strong>IP Portfolio</strong> (5 patents, 3 pending, deal structures), <strong>Markets</strong> (6 segments), <strong>Applications</strong> (6 areas with deep technical content), <strong>News</strong> (3 articles), <strong>About</strong> (team bios, milestones), and <strong>Contact</strong> (form + NDA process).
+            </div>
+          </div>
+          <span class="change-tag tag-new">Launch</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-new">📬</div>
+          <div class="change-body">
+            <div class="change-title">Contact form connected to Google Sheets</div>
+            <div class="change-desc">Contact form wired up to Google Apps Script endpoint, sending all form submissions to a Google Sheet in real time. NDA and inquiry type fields included.</div>
+          </div>
+          <span class="change-tag tag-new">New</span>
+        </div>
+        <div class="change-card">
+          <div class="change-icon icon-fix">🔧</div>
+          <div class="change-body">
+            <div class="change-title">Vercel deployment configuration fixed</div>
+            <div class="change-desc">Removed static export config that was causing deployment failures on Vercel. Site now deploys cleanly on every push to main.</div>
+          </div>
+          <span class="change-tag tag-fix">Fix</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="report-footer">
+    <div><strong>Surnetics LLC</strong> — Website Changes Report &nbsp;|&nbsp; Prepared April 15, 2026</div>
+    <div>surnetics.com &nbsp;|&nbsp; info@surnetics.com &nbsp;|&nbsp; github.com/watchdogpedro/surnetics</div>
+  </div>
+
+</body>
+</html>

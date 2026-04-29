@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "About Surnetics | Microfluidics IP & Life Science Patent Inventor",
   description:
     "Surnetics LLC holds a portfolio of 5 granted US microfluidics patents available for sale or licensing. Meet the team: Brian Babcock (registered patent agent, inventor) and Paul Denman (business development).",
+  alternates: { canonical: "/about" },
 };
 
 const team = [

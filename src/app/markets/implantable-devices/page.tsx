@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     "medical device IP licensing",
     "implantable drug delivery",
   ],
+  alternates: { canonical: "/markets/implantable-devices" },
 };
 
 const applications = [

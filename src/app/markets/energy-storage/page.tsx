@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Energy Storage & Generation | Passive Fluid Management",
   description: "Directional passive fluid management in fuel cells, batteries, and solar panels with no parasitic power draw. Surnetics Surface Energy Gradient Coating technology for energy applications.",
   keywords: ["fuel cell fluid management","battery thermal management","passive fluid control energy","solar panel water management","flow battery microfluidics","energy storage IP licensing","electrolyzer fluid management"],
+  alternates: { canonical: "/markets/energy-storage" },
 };
 
 const applications = [

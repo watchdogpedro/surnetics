@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Aerospace & Defense | Zero-Failure Passive Fluid Management",
   description: "No moving parts. No power requirements. Inherently reliable in high-vibration, vacuum, and zero-gravity environments. Surnetics Surface Energy Gradient Coating technology for aerospace and defense.",
   keywords: ["aerospace microfluidics","satellite thermal management","space fluid management","defense microfluidic technology","zero gravity fluid control","passive aerospace cooling","military microfluidics licensing"],
+  alternates: { canonical: "/markets/aerospace-defense" },
 };
 
 const applications = [

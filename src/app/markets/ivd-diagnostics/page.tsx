@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     "lateral flow device",
     "microfluidic IVD licensing",
   ],
+  alternates: { canonical: "/markets/ivd-diagnostics" },
 };
 
 const applications = [

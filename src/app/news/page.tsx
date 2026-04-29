@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "News & Updates | Surnetics Microfluidics IP",
   description:
     "Latest news from Surnetics LLC — microfluidics patent portfolio updates, technology insights, and industry commentary on passive fluid control, lab-on-a-chip IP, and point-of-care diagnostics.",
+  alternates: { canonical: "/news" },
 };
 
 const articles = [

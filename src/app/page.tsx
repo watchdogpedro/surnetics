@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "lateral flow assay patent portfolio",
     "point-of-care diagnostics patent license",
   ],
+  alternates: { canonical: "/" },
 };
 
 const valueProps = [

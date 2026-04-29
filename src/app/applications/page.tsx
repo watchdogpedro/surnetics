@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     "microfluidic immunoassay patent",
     "lateral flow assay IP",
   ],
+  alternates: { canonical: "/applications" },
 };
 
 const applications = [
