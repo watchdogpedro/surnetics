@@ -34,7 +34,7 @@ const team = [
   {
     initials: "PD",
     name: "Paul Denman",
-    title: "Co-Founder & Director of Business Development",
+    title: "Co-Founder",
     bio: "Paul brings 20+ years of industry experience across life sciences, medical devices, semiconductor, manufacturing automation, and defense. He leads Surnetics' commercialization strategy and business development, drawing on extensive global industry contacts and a track record in technology partnerships and M&A.",
     credentials: [
       "Engineering and biomedical engineering background",

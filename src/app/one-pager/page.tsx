@@ -458,7 +458,7 @@ export default function OnePagerPage() {
         <div className="footer">
           <div className="contact-block">
             <strong>Paul Denman</strong>
-            <p>Co-Founder &amp; Director of Business Development, Surnetics LLC</p>
+            <p>Co-Founder, Surnetics LLC</p>
             <p>paul@surnetics.com</p>
           </div>
           <a href="https://surnetics.com/ip-portfolio/" className="url">
