@@ -23,9 +23,11 @@ const team = [
       "Lead Inventor, 5 Granted US Patents (9,968,930 · 10,821,438 · 11,583,858 · 12,083,517 · 12,263,480)",
       "Registered US Patent Agent",
       "Former IP Manager, Donaldson Company",
+      "Over 15 years of IP management experience",
       "B.S. & M.S. Chemical Engineering, Vanderbilt University",
       "7 years, Argonne National Laboratory — nuclear reactor design",
       "Specialty electrodeposited coatings for NASA and Department of Defense",
+      "Over 25 years of experience developing specialty materials and coatings for medical and diagnostic devices, aerospace and defense components, solar and semiconductor technologies, and consumer and automotive products",
       "Expert in patent portfolio development, analysis, and commercial valuation",
     ],
   },
@@ -64,11 +66,11 @@ export default function AboutPage() {
               About Surnetics
             </p>
             <h1 className="text-white font-extrabold text-4xl md:text-5xl leading-tight tracking-tight mb-6">
-              Inventors. Patent Agents. Industry Veterans.
+              Inventors. IP Professionals. Industry Veterans.
             </h1>
             <p className="text-white/60 text-lg leading-relaxed">
               Surnetics LLC is a patented technology company founded to
-              commercialize a breakthrough platform that moves liquids through
+              commercialize a patented breakthrough platform that moves liquids through
               microfluidic channels without any pump, valve, or controller.
             </p>
           </div>
