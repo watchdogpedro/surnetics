@@ -66,7 +66,7 @@ export default function AboutPage() {
               Inventors. IP Professionals. Industry Veterans.
             </h1>
             <p className="text-white/60 text-lg leading-relaxed">
-              Surnetics LLC is a patented technology company founded to
+              Surnetics LLC is a patented company founded to
               commercialize a patented breakthrough platform that moves liquids through
               microfluidic channels without any pump, valve, or controller.
             </p>
